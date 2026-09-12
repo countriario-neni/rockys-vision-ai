@@ -267,6 +267,7 @@ img {
   background: var(--deep);
 }
 
+
 .tile:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow);
@@ -275,6 +276,7 @@ img {
 .tile-media {
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  min-width: 0;
   background: var(--deep);
 }
 
@@ -355,6 +357,45 @@ img {
   }
   to {
     transform: translateY(-4px) rotate(360deg);
+  }
+}
+
+/* Phones: a list row — square photo left, copy right — instead of a tall card. */
+@media (max-width: 479px) {
+  .tile {
+    position: relative;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .tile-media {
+    flex: none;
+    width: 38%;
+    min-width: 0;
+    aspect-ratio: auto;
+    min-height: 150px;
+  }
+  .tile-body {
+    position: static;
+    min-width: 0;
+    padding: 0.95rem 1rem 0.95rem 1rem;
+    gap: 0.35rem;
+  }
+  .tile-icon {
+    top: 0.6rem;
+    left: 0.6rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .tile-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .tile-title {
+    font-size: 0.98rem;
+  }
+  .tile-body > .eyebrow {
+    display: none;
   }
 }
 

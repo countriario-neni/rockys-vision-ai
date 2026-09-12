@@ -70,9 +70,11 @@ export default function PhotoBand() {
         }
         .pband-sub { margin: 0; font-size: .92rem; color: rgb(235 222 212 / .85); }
         @media (max-width: 720px) {
-          .pband-slab { width: 100%; clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 100%); }
-          .pband-row { justify-content: flex-start; align-items: flex-end; min-height: inherit; }
-          .pband { align-items: flex-end; }
+          .pband { display: block; min-height: 0; background: var(--ox-700); }
+          .pband-media { position: relative; aspect-ratio: 16 / 10; }
+          .pband-slab { display: none; }
+          .pband-row { padding-block: 2rem 2.5rem; }
+          .pband-copy { max-width: none; }
         }
       `}</style>
     </section>

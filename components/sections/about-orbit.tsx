@@ -147,8 +147,10 @@ export default function AboutOrbit() {
           content: ""; position: absolute; left: 0; top: .62em;
           width: 6px; height: 6px; border-radius: 50%; background: var(--ox-500);
         }
-        @media (max-width: 480px) {
-          .orbit-badge-inner { width: 76px; height: 76px; font-size: .68rem; }
+        @media (max-width: 600px) {
+          .orbit { width: min(100% - 5rem, 360px); margin-block: 2.5rem; }
+          .orbit-badge-inner { width: 72px; height: 72px; font-size: .66rem; }
+          .orbit-core { font-size: .62rem; }
         }
       `}</style>
     </section>

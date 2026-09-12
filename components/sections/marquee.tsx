@@ -27,7 +27,7 @@ export default function Marquee() {
 
       <style>{`
         .strip {
-          display: flex; align-items: stretch;
+          display: flex; align-items: stretch; overflow: hidden;
           background: #fff;
           border-bottom: 1px solid var(--rule);
           position: relative; z-index: 2;
@@ -41,7 +41,7 @@ export default function Marquee() {
           padding: 1.4rem 1.6rem;
           display: grid; place-items: center;
         }
-        .strip-scroller { overflow: hidden; flex: 1; display: flex; align-items: center; }
+        .strip-scroller { overflow: hidden; flex: 1; min-width: 0; display: flex; align-items: center; }
         .marquee-track {
           display: flex;
           width: max-content;

@@ -112,7 +112,7 @@ export default function SolutionsGrid({ heading = "Everything a fitness brand ne
           gap: clamp(.9rem, 2vw, 1.4rem);
           grid-template-columns: 1fr;
         }
-        .sol-grid > * { height: 100%; }
+        .sol-grid > * { height: 100%; min-width: 0; }
         .sol-grid-caps { margin-top: clamp(.9rem, 2vw, 1.4rem); }
         @media (min-width: 480px) { .sol-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 900px) {

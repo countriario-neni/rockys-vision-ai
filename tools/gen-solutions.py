@@ -26,7 +26,7 @@ NEG = "text, watermark, logo, caption, blurry, deformed, lowres, cartoon, illust
 
 PROMPTS = {
     "short-form-video": "athlete filmed on a smartphone gimbal in a moody gym, vertical video rig, ring light",
-    "ai-creative": "unlabelled matte black protein supplement tub on a studio set, blank plain packaging, dramatic sweeping light, dark red backdrop accent",
+    "ai-creative": "creative director at a studio workstation, large monitor showing a grid of generated fitness ad visuals of athletes, glowing screen light on the face, stylus tablet on the desk, futuristic",
     "paid-ads": "marketer at a dark desk reviewing ad campaign dashboard on a monitor, soft screen glow",
     "social-media-management": "content creator planning a social feed on a tablet at a gym cafe table, phone and notebook",
     "search-engine-optimisation": "laptop showing search analytics graphs on a clean desk, coffee, morning light",

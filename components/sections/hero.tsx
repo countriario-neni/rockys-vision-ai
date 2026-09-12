@@ -113,7 +113,18 @@ export default function Hero() {
         }
         .hero-in { animation: rise .9s var(--ease-out) both; }
         @media (max-width: 720px) {
-          .hero-slab { width: 52%; opacity: .75; }
+          .hero { min-height: 0; padding-top: 72px; }
+          .hero-grid { padding-block: clamp(2.5rem, 10vw, 4rem); }
+          .hero-media img { object-position: 70% 30%; }
+          .hero-scrim {
+            background:
+              linear-gradient(180deg, rgb(7 32 63 / .55) 0%, rgb(7 32 63 / .82) 60%, rgb(7 32 63 / .94) 100%);
+          }
+          .hero-slab {
+            width: 46%; opacity: .9;
+            clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 100%);
+            inset-block: 40% 0;
+          }
         }
       `}</style>
     </section>
