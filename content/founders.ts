@@ -3,6 +3,8 @@ export type Founder = {
   short: string;
   role: string;
   image: string;
+  /** Transparent, bottom-faded bust used for the rising-avatar treatment. */
+  cutout: string;
   imageAlt: string;
   bio: string;
   focus: string[];
@@ -20,6 +22,7 @@ export const FOUNDERS: Founder[] = [
     short: "Rakesh",
     role: "Co-founder — AI Systems & Technical Lead",
     image: "/founders/rakesh.jpg",
+    cutout: "/founders/rakesh-cutout.png",
     imageAlt: "Portrait of Rakesh Babu Gogineni, co-founder of Rocky's Vision AI",
     bio: "Rakesh is an AI automation engineer and the founder of Rocky Solutions LLC. He designs and deploys custom AI systems end to end — architecture through production — and leads the technical side of every build: the generation pipelines, the campaign tooling, and the tracking that shows what your spend actually returned. Custom-coded systems you own, not no-code setups that break at the first edge case.",
     focus: [
@@ -38,6 +41,7 @@ export const FOUNDERS: Founder[] = [
     short: "Hash",
     role: "Co-founder — Growth & Creative",
     image: "/founders/hash.jpg",
+    cutout: "/founders/hash-cutout.png",
     imageAlt: "Portrait of Hashwanth Kota, co-founder of Rocky's Vision AI",
     bio: "Hash runs growth and the creative that drives it — the hooks, the edit, the way a brand sounds in a caption and looks in a three-second cut. He owns the work people actually stop scrolling for, and the prospecting engine behind it: getting your brand in front of more of the right buyers, then turning that attention into booked calls and orders.",
     focus: [

@@ -1,5 +1,6 @@
 import { EXPERTISE } from "@/content/site";
 import Reveal from "@/components/motion/reveal";
+import FloatingProps from "@/components/motion/floating-props";
 
 /*
   Sits directly under the hero. Most fitness agencies are creative shops that outsource
@@ -8,8 +9,14 @@ import Reveal from "@/components/motion/reveal";
 */
 export default function Expertise() {
   return (
-    <section className="section" aria-labelledby="expertise-heading" style={{ paddingBottom: 0 }}>
-      <div className="shell">
+    <section className="section" aria-labelledby="expertise-heading" style={{ paddingBottom: 0, overflow: "hidden" }}>
+      <FloatingProps
+        props={[
+          { variant: "dumbbell", at: { top: "4%", right: "2%" }, size: 190, depth: 0.7, tilt: -14 },
+          { variant: "play", at: { bottom: "-6%", left: "1%" }, size: 120, depth: 1.1, tilt: 10 },
+        ]}
+      />
+      <div className="shell" style={{ position: "relative", zIndex: 1 }}>
         <Reveal>
           <p className="eyebrow">What we are expert in</p>
         </Reveal>

@@ -19,10 +19,11 @@ function Portrait({ founder }: { founder: Founder }) {
 
   return (
     <div className="portrait">
+      <span className="portrait-plinth" aria-hidden="true" />
       {!failed ? (
         // eslint-disable-next-line @next/next/no-img-element -- static export, no optimizer
         <img
-          src={founder.image}
+          src={founder.cutout}
           alt={founder.imageAlt}
           loading="lazy"
           decoding="async"
@@ -33,7 +34,6 @@ function Portrait({ founder }: { founder: Founder }) {
           {initials}
         </span>
       )}
-      <span className="portrait-wash" aria-hidden="true" />
     </div>
   );
 }
@@ -124,37 +124,50 @@ export default function Founders() {
         */
         .portrait {
           position: relative;
-          width: clamp(112px, 26vw, 148px);
-          aspect-ratio: 1 / 1;
+          width: clamp(150px, 30vw, 220px);
+          aspect-ratio: 1;
           flex: none;
-          border-radius: 999px;
-          background: linear-gradient(150deg, var(--deep-2) 0%, var(--void) 70%);
-          box-shadow: 0 0 0 1px var(--rule-strong), 0 14px 34px rgb(2 0 13 / .55);
           display: grid;
-          place-items: center;
-          overflow: hidden;
+          place-items: end center;
+          overflow: visible;
+        }
+        .portrait-plinth {
+          position: absolute;
+          left: 50%; bottom: 4%;
+          width: 92%; aspect-ratio: 1;
+          transform: translateX(-50%);
+          border-radius: 50%;
+          background:
+            radial-gradient(circle at 50% 60%, rgb(10 45 86 / .95) 0%, rgb(7 32 63 / .55) 40%, transparent 70%),
+            radial-gradient(circle at 50% 95%, rgb(163 36 28 / .35) 0%, transparent 55%);
+          filter: blur(12px);
         }
         .portrait img {
-          width: 100%; height: 100%;
-          object-fit: cover;
-          object-position: center top;
-          filter: grayscale(.45) contrast(1.08);
+          position: relative;
+          width: 100%; height: auto;
+          display: block;
+          filter:
+            drop-shadow(0 20px 28px rgb(2 0 13 / .7))
+            contrast(1.06) saturate(.92);
           transition: transform .8s var(--ease), filter .8s var(--ease);
+          animation: portrait-float 7s ease-in-out infinite;
         }
+        .founder-card:nth-child(2) .portrait img { animation-delay: -3.5s; }
         .founder-card:hover .portrait img {
-          transform: scale(1.05);
-          filter: grayscale(0) contrast(1.02);
+          transform: translateY(-6px) scale(1.03);
+          filter: drop-shadow(0 28px 36px rgb(2 0 13 / .8)) drop-shadow(0 0 36px rgb(163 36 28 / .28)) contrast(1.04) saturate(1);
+        }
+        @keyframes portrait-float {
+          0%, 100% { translate: 0 0; }
+          50%      { translate: 0 -7px; }
         }
         .portrait-monogram {
           font-size: 2.2rem;
           color: var(--ox-700);
           letter-spacing: -.04em;
         }
-        .portrait-wash {
-          position: absolute; inset: 0;
-          border-radius: 999px;
-          background: radial-gradient(circle at 50% 30%, transparent 55%, rgb(2 0 13 / .45) 100%);
-          pointer-events: none;
+        @media (prefers-reduced-motion: reduce) {
+          .portrait img { animation: none; }
         }
         .founder-body { padding: clamp(1.4rem, 3vw, 1.9rem) 0 0; position: relative; z-index: 1; }
         .founder-focus {

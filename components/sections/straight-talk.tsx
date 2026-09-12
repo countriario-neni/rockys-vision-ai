@@ -1,5 +1,6 @@
 import { SITE } from "@/content/site";
 import Reveal from "@/components/motion/reveal";
+import FloatingProps from "@/components/motion/floating-props";
 
 /*
   This section exists because the studio is new and has no case studies. Rather than
@@ -28,8 +29,14 @@ const POINTS = [
 
 export default function StraightTalk() {
   return (
-    <section className="section band" aria-labelledby="straight-heading">
-      <div className="shell">
+    <section className="section band" aria-labelledby="straight-heading" style={{ overflow: "hidden" }}>
+      <FloatingProps
+        props={[
+          { variant: "kettlebell", at: { top: "6%", right: "3%" }, size: 170, depth: 0.8, tilt: 8 },
+          { variant: "shaker", at: { bottom: "4%", left: "2%" }, size: 150, depth: 1.2, tilt: -12 },
+        ]}
+      />
+      <div className="shell" style={{ position: "relative", zIndex: 1 }}>
         <Reveal>
           <p className="eyebrow">Straight talk</p>
         </Reveal>
