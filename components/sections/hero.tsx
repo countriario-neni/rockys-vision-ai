@@ -94,7 +94,7 @@ export default function Hero() {
               <img src={src} alt={founder.imageAlt} decoding="async" fetchPriority={i === 0 ? "high" : "auto"} />
               <figcaption>
                 <span className="hero-avatar-name">{founder.short}</span>
-                <span className="hero-avatar-role">{founder.role.replace("Co-founder — ", "")}</span>
+                <span className="hero-avatar-role">{founder.heroRole ?? founder.role.replace("Co-founder — ", "")}</span>
               </figcaption>
             </figure>
           ))}
