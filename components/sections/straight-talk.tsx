@@ -1,6 +1,5 @@
 import { SITE } from "@/content/site";
 import Reveal from "@/components/motion/reveal";
-import FloatingProps from "@/components/motion/floating-props";
 
 /*
   This section exists because the studio is new and has no case studies. Rather than
@@ -29,27 +28,23 @@ const POINTS = [
 
 export default function StraightTalk() {
   return (
-    <section className="section band" aria-labelledby="straight-heading" style={{ overflow: "hidden" }}>
-      <FloatingProps
-        props={[
-          { variant: "kettlebell", at: { top: "6%", right: "3%" }, size: 170, depth: 0.8, tilt: 8 },
-          { variant: "shaker", at: { bottom: "4%", left: "2%" }, size: 150, depth: 1.2, tilt: -12 },
-        ]}
-      />
-      <div className="shell" style={{ position: "relative", zIndex: 1 }}>
-        <Reveal>
-          <p className="eyebrow">Straight talk</p>
-        </Reveal>
-        <Reveal delay={80}>
-          <h2 id="straight-heading" className="display display-lg" style={{ margin: "1rem 0 0", maxWidth: "17ch" }}>
-            Why trust a <span style={{ color: "var(--ox-300)" }}>new</span> studio
-          </h2>
-        </Reveal>
+    <section className="section" aria-labelledby="straight-heading" style={{ background: "var(--cream)" }}>
+      <div className="shell">
+        <div className="center">
+          <Reveal>
+            <p className="eyebrow eyebrow-chev">Why choose us</p>
+          </Reveal>
+          <Reveal delay={80}>
+            <h2 id="straight-heading" className="display display-lg" style={{ margin: "1rem auto 0", maxWidth: "17ch" }}>
+              Why trust a <span>new</span> studio
+            </h2>
+          </Reveal>
+        </div>
 
         <div className="talk-grid">
           {POINTS.map((point, i) => (
             <Reveal key={point.title} delay={i * 90}>
-              <article className="talk-item">
+              <article className="card talk-item">
                 <h3 className="display" style={{ fontSize: "1.12rem", margin: 0, letterSpacing: "-0.008em" }}>
                   {point.title}
                 </h3>
@@ -62,7 +57,7 @@ export default function StraightTalk() {
         </div>
 
         <Reveal delay={200}>
-          <p className="eyebrow eyebrow-dim" style={{ marginTop: "clamp(2.5rem, 5vw, 3.5rem)" }}>
+          <p className="eyebrow eyebrow-dim center" style={{ marginTop: "clamp(2.5rem, 5vw, 3.5rem)", display: "block" }}>
             Working with brands across {SITE.markets.join(", ")}
           </p>
         </Reveal>
@@ -72,13 +67,15 @@ export default function StraightTalk() {
         .talk-grid {
           margin-top: clamp(2.5rem, 6vw, 4rem);
           display: grid;
-          gap: clamp(1.75rem, 4vw, 3rem);
+          gap: clamp(1rem, 2vw, 1.5rem);
           grid-template-columns: 1fr;
         }
         @media (min-width: 800px) { .talk-grid { grid-template-columns: repeat(2, 1fr); } }
         .talk-item {
-          padding-left: 1.4rem;
-          border-left: 2px solid var(--ox-700);
+          padding: clamp(1.4rem, 2.5vw, 1.9rem);
+          border-top: 4px solid var(--ox-700);
+          border-radius: 0 0 12px 12px;
+          height: 100%;
         }
       `}</style>
     </section>

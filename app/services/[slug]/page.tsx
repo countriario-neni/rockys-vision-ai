@@ -39,10 +39,15 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
   return (
     <>
-      <header className="section" style={{ paddingTop: "clamp(8rem, 16vw, 12rem)", paddingBottom: 0 }}>
-        <div className="shell">
+      <header className="band svc-head">
+        <div className="svc-head-media" aria-hidden="true">
+          {/* eslint-disable-next-line @next/next/no-img-element -- static export, no optimizer */}
+          <img src={service.image} alt="" fetchPriority="high" decoding="async" />
+        </div>
+        <div className="slab" aria-hidden="true" />
+        <div className="shell" style={{ position: "relative", zIndex: 1 }}>
           <Reveal>
-            <p className="eyebrow">
+            <p className="eyebrow" style={{ color: "var(--cream)" }}>
               <Link prefetch={false} href="/services/" className="link" style={{ color: "inherit" }}>
                 Services
               </Link>{" "}
@@ -50,12 +55,12 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
             </p>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="display display-xl" style={{ margin: "1.25rem 0 0", fontSize: "clamp(2.5rem, 8vw, 6.5rem)" }}>
+            <h1 className="display display-xl" style={{ margin: "1.25rem 0 0", color: "#fff", maxWidth: "14ch" }}>
               {service.title}
             </h1>
           </Reveal>
           <Reveal delay={140}>
-            <p className="lede" style={{ marginTop: "1.75rem" }}>{service.short}</p>
+            <p className="lede" style={{ marginTop: "1.5rem", color: "rgb(235 222 212 / .88)" }}>{service.short}</p>
           </Reveal>
         </div>
       </header>
@@ -78,7 +83,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
           </Reveal>
           <Reveal delay={80}>
             <h2 id="deliverables-heading" className="display display-lg" style={{ margin: "1rem 0 0", maxWidth: "14ch" }}>
-              In the <span style={{ color: "var(--ox-300)" }}>scope</span>
+              In the <span>scope</span>
             </h2>
           </Reveal>
 
@@ -106,7 +111,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
           </Reveal>
           <Reveal delay={80}>
             <h2 id="how-heading" className="display display-lg" style={{ margin: "1rem 0 0", maxWidth: "14ch" }}>
-              The <span style={{ color: "var(--ox-300)" }}>method</span>
+              The <span>method</span>
             </h2>
           </Reveal>
 
@@ -164,6 +169,18 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
       />
 
       <style>{`
+        .svc-head {
+          position: relative; overflow: hidden;
+          padding: clamp(8rem, 16vw, 12rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+          min-height: 60vh; display: flex; align-items: flex-end;
+        }
+        .svc-head-media { position: absolute; inset: 0; }
+        .svc-head-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .svc-head-media::after {
+          content: ""; position: absolute; inset: 0;
+          background: linear-gradient(90deg, rgb(7 32 63 / .92) 0%, rgb(7 32 63 / .7) 50%, rgb(7 32 63 / .3) 100%);
+        }
+        .svc-head .slab { opacity: .85; }
         .svc-intro { display: grid; gap: clamp(1rem, 3vw, 2.5rem); }
         @media (min-width: 900px) { .svc-intro { grid-template-columns: 14rem minmax(0, 1fr); } }
         .deliv-grid {
@@ -188,7 +205,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
         }
         .method-step {
           font-family: var(--font-mono), monospace;
-          font-size: .7rem; letter-spacing: .18em; color: var(--cream-faint);
+          font-size: .7rem; letter-spacing: .18em; color: var(--ink-faint);
         }
         .fit-block {
           margin-top: clamp(2.5rem, 5vw, 3.5rem);
@@ -202,7 +219,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
         .fit-list li {
           font-family: var(--font-mono), monospace;
           font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
-          color: var(--cream-dim);
+          color: var(--ink-dim);
           border: 1px solid var(--rule); border-radius: 999px; padding: .45rem .85rem;
         }
         .other-grid {
@@ -212,7 +229,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
         @media (min-width: 760px) { .other-grid { grid-template-columns: repeat(3, 1fr); } }
         .other-card {
           padding: clamp(1.35rem, 2.5vw, 1.75rem);
-          text-decoration: none; color: var(--cream);
+          text-decoration: none; color: var(--ink);
         }
       `}</style>
     </>

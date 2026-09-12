@@ -40,14 +40,14 @@ function Portrait({ founder }: { founder: Founder }) {
 
 export default function Founders() {
   return (
-    <section id="founders" className="section band" aria-labelledby="founders-heading">
+    <section id="founders" className="section" aria-labelledby="founders-heading">
       <div className="shell">
         <Reveal>
           <p className="eyebrow">Who you work with</p>
         </Reveal>
         <Reveal delay={80}>
           <h2 id="founders-heading" className="display display-lg" style={{ margin: "1rem 0 0", maxWidth: "20ch" }}>
-            Two founders. <span style={{ color: "var(--ox-300)" }}>No handoff.</span>
+            Two founders. <span>No handoff.</span>
           </h2>
         </Reveal>
         <Reveal delay={140}>
@@ -138,8 +138,8 @@ export default function Founders() {
           transform: translateX(-50%);
           border-radius: 50%;
           background:
-            radial-gradient(circle at 50% 60%, rgb(10 45 86 / .95) 0%, rgb(7 32 63 / .55) 40%, transparent 70%),
-            radial-gradient(circle at 50% 95%, rgb(163 36 28 / .35) 0%, transparent 55%);
+            radial-gradient(circle at 50% 60%, var(--cream) 0%, rgb(235 222 212 / .6) 40%, transparent 70%),
+            radial-gradient(circle at 50% 95%, rgb(163 36 28 / .2) 0%, transparent 55%);
           filter: blur(12px);
         }
         .portrait img {
@@ -147,7 +147,7 @@ export default function Founders() {
           width: 100%; height: auto;
           display: block;
           filter:
-            drop-shadow(0 20px 28px rgb(2 0 13 / .7))
+            drop-shadow(0 18px 26px rgb(7 32 63 / .25))
             contrast(1.06) saturate(.92);
           transition: transform .8s var(--ease), filter .8s var(--ease);
           animation: portrait-float 7s ease-in-out infinite;
@@ -155,7 +155,7 @@ export default function Founders() {
         .founder-card:nth-child(2) .portrait img { animation-delay: -3.5s; }
         .founder-card:hover .portrait img {
           transform: translateY(-6px) scale(1.03);
-          filter: drop-shadow(0 28px 36px rgb(2 0 13 / .8)) drop-shadow(0 0 36px rgb(163 36 28 / .28)) contrast(1.04) saturate(1);
+          filter: drop-shadow(0 24px 32px rgb(7 32 63 / .3)) contrast(1.04) saturate(1);
         }
         @keyframes portrait-float {
           0%, 100% { translate: 0 0; }
@@ -180,7 +180,7 @@ export default function Founders() {
           font-size: .66rem;
           letter-spacing: .13em;
           text-transform: uppercase;
-          color: var(--cream-dim);
+          color: var(--ink-dim);
           border: 1px solid var(--rule);
           border-radius: 999px;
           padding: .42rem .8rem;

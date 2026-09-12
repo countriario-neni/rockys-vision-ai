@@ -32,7 +32,7 @@ export default function WhatsAppFab() {
         display: "grid",
         placeItems: "center",
         background: "var(--ox-500)",
-        color: "var(--cream)",
+        color: "var(--ink)",
         border: "1px solid var(--ox-400)",
         boxShadow: "0 10px 30px rgb(2 0 13 / 0.6)",
         opacity: shown ? 1 : 0,

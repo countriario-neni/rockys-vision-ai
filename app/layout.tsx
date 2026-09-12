@@ -4,7 +4,6 @@ import { SITE } from "@/content/site";
 import { FOUNDERS } from "@/content/founders";
 import { SERVICES, CAPABILITIES } from "@/content/services";
 import LenisProvider from "@/components/motion/lenis-provider";
-import PixelStatic from "@/components/motion/pixel-static";
 import Nav from "@/components/ui/nav";
 import Footer from "@/components/ui/footer";
 import WhatsAppFab from "@/components/ui/whatsapp-fab";
@@ -104,7 +103,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <PixelStatic />
         <LenisProvider />
         <Nav />
         <main id="main">{children}</main>

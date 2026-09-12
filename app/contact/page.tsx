@@ -50,14 +50,14 @@ const CHANNELS = [
 export default function Contact() {
   return (
     <>
-      <header className="section" style={{ paddingTop: "clamp(8rem, 16vw, 12rem)", paddingBottom: 0 }}>
+      <header className="section" style={{ paddingTop: "clamp(7rem, 14vw, 10rem)", paddingBottom: 0 }}>
         <div className="shell">
           <Reveal>
             <p className="eyebrow">Contact</p>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="display display-xl" style={{ margin: "1.25rem 0 0", fontSize: "clamp(2.5rem, 8vw, 6.5rem)", maxWidth: "14ch" }}>
-              Tell us what you <span style={{ color: "var(--ox-300)" }}>sell</span>
+            <h1 className="display display-xl" style={{ margin: "1.25rem 0 0", maxWidth: "14ch" }}>
+              Tell us what you <span>sell</span>
             </h1>
           </Reveal>
           <Reveal delay={140}>
@@ -84,7 +84,7 @@ export default function Contact() {
                   {...(channel.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   style={channel.primary ? { borderColor: "var(--ox-400)" } : undefined}
                 >
-                  <span className="eyebrow" style={{ color: channel.primary ? "var(--ox-300)" : "var(--cream-faint)" }}>
+                  <span className="eyebrow" style={{ color: channel.primary ? "var(--accent-hi)" : "var(--ink-faint)" }}>
                     {channel.label}
                   </span>
                   <span className="display" style={{ fontSize: "1.16rem", display: "block", marginTop: ".8rem" }}>
@@ -127,7 +127,7 @@ export default function Contact() {
         @media (min-width: 1040px) { .channel-grid { grid-template-columns: repeat(4, 1fr); } }
         .channel-card {
           padding: clamp(1.35rem, 2.5vw, 1.8rem);
-          text-decoration: none; color: var(--cream);
+          text-decoration: none; color: var(--ink);
           display: block; height: 100%;
         }
         .brief-block {
@@ -141,7 +141,7 @@ export default function Contact() {
         }
         .brief-list li {
           position: relative; padding-left: 1.4rem;
-          color: var(--cream-dim); font-size: .96rem;
+          color: var(--ink-dim); font-size: .96rem;
         }
         .brief-list li::before {
           content: ""; position: absolute; left: 0; top: .62em;

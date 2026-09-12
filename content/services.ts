@@ -3,6 +3,8 @@ export type Service = {
   number: string;
   title: string;
   short: string;
+  /** Tile photo — generated locally with an open-weights model, see tools/gen-solutions.py */
+  image: string;
   summary: string;
   intro: string;
   deliverables: { title: string; body: string }[];
@@ -14,6 +16,7 @@ export type Service = {
 export const SERVICES: Service[] = [
   {
     slug: "short-form-video",
+    image: "/solutions/short-form-video.jpg",
     number: "01",
     title: "Short-Form Video",
     short: "Reels, Shorts and TikToks built to stop the scroll",
@@ -74,6 +77,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "ai-creative",
+    image: "/solutions/ai-creative.jpg",
     number: "02",
     title: "AI Creative",
     short: "Generated visuals, avatars and ad variants at production quality",
@@ -134,6 +138,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "paid-ads",
+    image: "/solutions/paid-ads.jpg",
     number: "03",
     title: "Paid Ads & Performance",
     short: "Meta and Google campaigns judged on what they return",
@@ -194,6 +199,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "social-media-management",
+    image: "/solutions/social-media-management.jpg",
     number: "04",
     title: "Social Media Management",
     short: "The whole presence, run end to end",
@@ -255,45 +261,65 @@ export const SERVICES: Service[] = [
 ];
 
 // Supporting capabilities. Listed and sold, but without dedicated pages — they wrap
-// around the four core lines rather than standing alone.
-export const CAPABILITIES = [
+// around the four core lines rather than standing alone. Each has a tile photo.
+export type Capability = { slug: string; image: string; title: string; body: string };
+
+export const CAPABILITIES: Capability[] = [
   {
+    slug: "search-engine-optimisation",
+    image: "/solutions/search-engine-optimisation.jpg",
     title: "Search Engine Optimisation",
     body: "Technical and content SEO for supplement and fitness ecommerce, built around the queries that carry buying intent.",
   },
   {
+    slug: "local-seo",
+    image: "/solutions/local-seo.jpg",
     title: "Local SEO",
     body: "Google Business Profile, maps ranking and citations for gyms and studios competing inside a five-kilometre radius.",
   },
   {
+    slug: "branding-and-identity",
+    image: "/solutions/branding-and-identity.jpg",
     title: "Branding & Identity",
     body: "Positioning, naming, logo systems and the guidelines that stop a brand drifting across fifty pieces of content.",
   },
   {
+    slug: "graphic-design",
+    image: "/solutions/graphic-design.jpg",
     title: "Graphic Design",
     body: "Packaging, labels, banners, thumbnails, ad statics and the everyday design a content engine consumes.",
   },
   {
+    slug: "software-and-web-development",
+    image: "/solutions/software-and-web-development.jpg",
     title: "Software & Web Development",
     body: "Production software, internal tools and fast static-first marketing sites, built and led by an engineer rather than assembled from a template.",
   },
   {
+    slug: "lead-generation",
+    image: "/solutions/lead-generation.jpg",
     title: "Lead Generation",
     body: "Outbound engines and inbound capture that put more qualified fitness buyers in front of your offer, then follow up until they book.",
   },
   {
+    slug: "ecommerce",
+    image: "/solutions/ecommerce.jpg",
     title: "Ecommerce",
     body: "Shopify and headless storefronts for supplement and apparel catalogues, wired to your ad and analytics stack.",
   },
   {
+    slug: "email-and-retention",
+    image: "/solutions/email-and-retention.jpg",
     title: "Email & Retention",
     body: "Flows and campaigns that make a second purchase happen — the cheapest revenue a supplement brand has.",
   },
   {
+    slug: "analytics-and-tracking",
+    image: "/solutions/analytics-and-tracking.jpg",
     title: "Analytics & Tracking",
     body: "Pixels, server-side events and attribution set up properly, so the numbers your ads report survive scrutiny.",
   },
-] as const;
+];
 
 export const PROCESS = [
   {

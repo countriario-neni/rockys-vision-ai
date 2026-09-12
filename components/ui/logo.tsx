@@ -14,13 +14,13 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
       }}
     >
       <span>Rocky&rsquo;s</span>
-      <span style={{ color: "var(--ox-300)" }}>Vision</span>
+      <span style={{ color: "var(--accent-hi)" }}>Vision</span>
       <span
         style={{
           fontFamily: "var(--font-mono)",
           fontSize: "0.62em",
           letterSpacing: "0.14em",
-          color: "var(--cream-faint)",
+          color: "var(--ink-faint)",
           textTransform: "uppercase",
         }}
       >

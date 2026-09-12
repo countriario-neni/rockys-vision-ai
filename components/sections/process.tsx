@@ -10,7 +10,7 @@ export default function Process() {
         </Reveal>
         <Reveal delay={80}>
           <h2 id="process-heading" className="display display-lg" style={{ margin: "1rem 0 0", maxWidth: "16ch" }}>
-            From call to <span style={{ color: "var(--ox-300)" }}>cadence</span>
+            From call to <span>cadence</span>
           </h2>
         </Reveal>
 
@@ -61,7 +61,7 @@ export default function Process() {
           font-family: var(--font-mono), monospace;
           font-size: .7rem;
           letter-spacing: .18em;
-          color: var(--cream-faint);
+          color: var(--ink-faint);
         }
       `}</style>
     </section>

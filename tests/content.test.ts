@@ -3,6 +3,8 @@ import { SITE, NAV, EXPERTISE } from "@/content/site";
 import { SERVICES, CAPABILITIES, PROCESS, FAQS } from "@/content/services";
 import { FOUNDERS } from "@/content/founders";
 import { whatsappHref } from "@/lib/contact";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 
 /*
   These guard the two rules that matter most for this site: it must deploy to the right
@@ -80,6 +82,17 @@ describe("service model", () => {
       expect(service.deliverables.length).toBeGreaterThanOrEqual(4);
       expect(service.process).toHaveLength(4);
       expect(service.fitFor.length).toBeGreaterThanOrEqual(3);
+    }
+  });
+
+  it("gives every solution tile a photo that exists on disk", () => {
+    // Thirteen tiles, thirteen generated frames. A missing file ships as a broken image.
+    const tiles = [...SERVICES, ...CAPABILITIES];
+    expect(tiles).toHaveLength(13);
+    expect(new Set(tiles.map((t) => t.slug)).size).toBe(13);
+    for (const tile of tiles) {
+      expect(tile.image).toBe(`/solutions/${tile.slug}.jpg`);
+      expect(existsSync(join(process.cwd(), "public", tile.image))).toBe(true);
     }
   });
 

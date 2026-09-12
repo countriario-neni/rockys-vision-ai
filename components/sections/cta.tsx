@@ -12,7 +12,7 @@ export default function Cta({
   return (
     <section id="contact-cta" className="section" aria-labelledby="cta-heading">
       <div className="shell">
-        <div className="cta-panel">
+        <div className="cta-panel band">
           <div aria-hidden="true" className="cta-glow" />
 
           <div style={{ position: "relative" }}>
@@ -42,7 +42,7 @@ export default function Cta({
             <Reveal delay={260}>
               <p className="eyebrow eyebrow-dim" style={{ marginTop: "2rem" }}>
                 Or email{" "}
-                <a className="link" href={`mailto:${SITE.email}`} style={{ color: "var(--cream-dim)" }}>
+                <a className="link" href={`mailto:${SITE.email}`} style={{ color: "var(--ink-dim)" }}>
                   {SITE.email}
                 </a>
               </p>
@@ -58,7 +58,7 @@ export default function Cta({
           border: 1px solid var(--rule-strong);
           border-radius: 20px;
           padding: clamp(2rem, 6vw, 4.5rem);
-          background: linear-gradient(150deg, var(--deep) 0%, var(--void) 62%);
+          background: linear-gradient(150deg, var(--deep-2) 0%, var(--deep) 62%);
         }
         .cta-glow {
           position: absolute;

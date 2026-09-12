@@ -1,6 +1,5 @@
 import { EXPERTISE } from "@/content/site";
 import Reveal from "@/components/motion/reveal";
-import FloatingProps from "@/components/motion/floating-props";
 
 /*
   Sits directly under the hero. Most fitness agencies are creative shops that outsource
@@ -9,20 +8,14 @@ import FloatingProps from "@/components/motion/floating-props";
 */
 export default function Expertise() {
   return (
-    <section className="section" aria-labelledby="expertise-heading" style={{ paddingBottom: 0, overflow: "hidden" }}>
-      <FloatingProps
-        props={[
-          { variant: "dumbbell", at: { top: "4%", right: "2%" }, size: 190, depth: 0.7, tilt: -14 },
-          { variant: "play", at: { bottom: "-6%", left: "1%" }, size: 120, depth: 1.1, tilt: 10 },
-        ]}
-      />
-      <div className="shell" style={{ position: "relative", zIndex: 1 }}>
+    <section className="section" aria-labelledby="expertise-heading" style={{ paddingBottom: 0 }}>
+      <div className="shell">
         <Reveal>
           <p className="eyebrow">What we are expert in</p>
         </Reveal>
         <Reveal delay={80}>
           <h2 id="expertise-heading" className="display display-lg" style={{ margin: "1rem 0 0", maxWidth: "22ch" }}>
-            A creative studio with an <span style={{ color: "var(--ox-300)" }}>engineering</span> spine
+            A creative studio with an <span>engineering</span> spine
           </h2>
         </Reveal>
 
@@ -56,14 +49,15 @@ export default function Expertise() {
           padding: clamp(1.4rem, 2.5vw, 1.8rem);
           border: 1px solid var(--rule);
           border-radius: 14px;
-          background: linear-gradient(165deg, rgb(7 32 63 / .32) 0%, transparent 75%);
+          background: var(--panel-2);
+          border-top: 4px solid var(--ox-700);
           height: 100%;
         }
         .exp-index {
           font-family: var(--font-mono), monospace;
           font-size: .68rem;
           letter-spacing: .2em;
-          color: var(--ox-300);
+          color: var(--accent-hi);
         }
       `}</style>
     </section>

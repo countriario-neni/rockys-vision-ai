@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import ServicesList from "@/components/sections/services-list";
-import Capabilities from "@/components/sections/capabilities";
+import SolutionsGrid from "@/components/sections/solutions-grid";
 import Process from "@/components/sections/process";
 import Cta from "@/components/sections/cta";
 import Reveal from "@/components/motion/reveal";
@@ -15,14 +14,14 @@ export const metadata: Metadata = {
 export default function ServicesIndex() {
   return (
     <>
-      <header className="section" style={{ paddingTop: "clamp(8rem, 16vw, 12rem)", paddingBottom: 0 }}>
+      <header className="section page-head" style={{ paddingTop: "clamp(7rem, 14vw, 10rem)", paddingBottom: "clamp(2rem, 5vw, 3rem)" }}>
         <div className="shell">
           <Reveal>
             <p className="eyebrow">Services</p>
           </Reveal>
           <Reveal delay={80}>
             <h1 className="display display-xl" style={{ margin: "1.25rem 0 0", fontSize: "clamp(2.5rem, 8vw, 6.5rem)" }}>
-              What we <span style={{ color: "var(--ox-300)" }}>run</span>
+              What we <span>run</span>
             </h1>
           </Reveal>
           <Reveal delay={140}>
@@ -34,8 +33,7 @@ export default function ServicesIndex() {
         </div>
       </header>
 
-      <ServicesList />
-      <Capabilities />
+      <SolutionsGrid heading="Thirteen solutions, one engine" />
       <Process />
       <Cta />
     </>

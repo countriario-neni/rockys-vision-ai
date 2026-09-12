@@ -1,31 +1,34 @@
 import Hero from "@/components/sections/hero";
 import Marquee from "@/components/sections/marquee";
-import ReelWall from "@/components/sections/reel-wall";
-import Expertise from "@/components/sections/expertise";
-import ServicesList from "@/components/sections/services-list";
-import ParallaxBand from "@/components/sections/parallax-band";
+import AboutOrbit from "@/components/sections/about-orbit";
+import CtaBand from "@/components/sections/cta-band";
+import SolutionsGrid from "@/components/sections/solutions-grid";
+import PhotoBand from "@/components/sections/photo-band";
 import StraightTalk from "@/components/sections/straight-talk";
 import Founders from "@/components/sections/founders";
 import Process from "@/components/sections/process";
-import Capabilities from "@/components/sections/capabilities";
 import Faq from "@/components/sections/faq";
-import Cta from "@/components/sections/cta";
+import ProposalForm from "@/components/sections/proposal-form";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Marquee />
-      <ReelWall />
-      <Expertise />
-      <ServicesList />
-      <ParallaxBand />
+      <AboutOrbit />
+      <CtaBand />
+      <SolutionsGrid />
+      <PhotoBand />
       <StraightTalk />
       <Founders />
       <Process />
-      <Capabilities />
       <Faq />
-      <Cta />
+      <CtaBand
+        heading="Let's work together — tell us what you sell and where it is stuck"
+        cta="Book a call"
+        image="/reel/gym-dark.jpg"
+      />
+      <ProposalForm />
     </>
   );
 }

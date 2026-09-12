@@ -13,7 +13,7 @@ export default function Faq() {
           </Reveal>
           <Reveal delay={80}>
             <h2 id="faq-heading" className="display display-lg" style={{ margin: "1rem 0 0", maxWidth: "12ch" }}>
-              Before you <span style={{ color: "var(--ox-300)" }}>ask</span>
+              Before you <span>ask</span>
             </h2>
           </Reveal>
         </div>
@@ -57,7 +57,7 @@ export default function Faq() {
           transition: color .35s var(--ease);
         }
         .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary:hover { color: var(--ox-300); }
+        .faq-item summary:hover { color: var(--accent-hi); }
         .faq-icon {
           position: relative;
           flex: none;
@@ -66,7 +66,7 @@ export default function Faq() {
         .faq-icon::before, .faq-icon::after {
           content: "";
           position: absolute;
-          background: var(--ox-300);
+          background: var(--accent-hi);
           transition: transform .4s var(--ease), opacity .3s var(--ease);
         }
         .faq-icon::before { inset: 6px 0; height: 1.5px; }

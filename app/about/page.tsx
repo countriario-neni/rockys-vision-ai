@@ -22,14 +22,14 @@ const STORY = [
 export default function About() {
   return (
     <>
-      <header className="section" style={{ paddingTop: "clamp(8rem, 16vw, 12rem)", paddingBottom: 0 }}>
+      <header className="section" style={{ paddingTop: "clamp(7rem, 14vw, 10rem)", paddingBottom: 0 }}>
         <div className="shell">
           <Reveal>
             <p className="eyebrow">About</p>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="display display-xl" style={{ margin: "1.25rem 0 0", fontSize: "clamp(2.5rem, 8vw, 6.5rem)", maxWidth: "16ch" }}>
-              A studio built for <span style={{ color: "var(--ox-300)" }}>one</span> industry
+            <h1 className="display display-xl" style={{ margin: "1.25rem 0 0", maxWidth: "16ch" }}>
+              A studio built for <span>one</span> industry
             </h1>
           </Reveal>
         </div>
@@ -49,7 +49,7 @@ export default function About() {
                     lineHeight: 1.6,
                     marginTop: i === 0 ? 0 : "1.5rem",
                     marginBottom: 0,
-                    color: i === 0 ? "var(--cream)" : "var(--cream-dim)",
+                    color: i === 0 ? "var(--ink)" : "var(--ink-dim)",
                     textWrap: "pretty",
                     maxWidth: "64ch",
                   }}
@@ -62,7 +62,7 @@ export default function About() {
             <Reveal delay={260}>
               <p className="eyebrow eyebrow-dim" style={{ marginTop: "2.5rem" }}>
                 Serving brands in {SITE.markets.join(", ")} · Part of{" "}
-                <a className="link" href={SITE.parentUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--cream-dim)" }}>
+                <a className="link" href={SITE.parentUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink-dim)" }}>
                   {SITE.parent}
                 </a>
               </p>

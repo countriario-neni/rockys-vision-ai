@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="shell">
         <p className="eyebrow">404</p>
         <h1 className="display display-lg" style={{ margin: "1rem 0 0", maxWidth: "16ch" }}>
-          That page isn&rsquo;t <span style={{ color: "var(--ox-300)" }}>here</span>
+          That page isn&rsquo;t <span>here</span>
         </h1>
         <p className="lede" style={{ marginTop: "1.5rem" }}>
           The link is wrong or the page has moved. The four things we actually do are below.
