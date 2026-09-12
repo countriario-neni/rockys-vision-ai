@@ -1,0 +1,324 @@
+@import "tailwindcss";
+
+/*
+  Rocky's Vision AI — design tokens.
+
+  The brand is four colours, fixed by the owner:
+    #02000D  void      page ground
+    #07203f  deep      elevated surfaces and section bands
+    #ebded4  cream     type, rules, primary CTA fill
+    #3f0d0c  oxblood   accent
+
+  Oxblood at its given value is too dark to carry interactive states on a near-black
+  ground, so the accent is expressed as a scale that holds the same hue (~hsl 4) and
+  climbs in lightness. Only ox-300/400 are used for text or focus rings; ox-900 is a
+  field colour. Nothing outside this hue family is introduced.
+*/
+
+:root {
+  --void: #02000d;
+  --deep: #07203f;
+  --deep-2: #0a2d56;
+  --cream: #ebded4;
+
+  --ox-900: #3f0d0c;
+  --ox-700: #6b1712;
+  --ox-500: #a3241c;
+  --ox-400: #c9382c;
+  --ox-300: #e3594a;
+
+  /* Cream at opacity — the only greys in the system, so everything stays warm. */
+  --cream-dim: rgb(235 222 212 / 0.66);
+  --cream-faint: rgb(235 222 212 / 0.42);
+  --rule: rgb(235 222 212 / 0.14);
+  --rule-strong: rgb(235 222 212 / 0.28);
+
+  --glow-ox: rgb(163 36 28 / 0.28);
+  --glow-deep: rgb(10 45 86 / 0.55);
+
+  --measure: 62ch;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --shell: 1280px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* Lenis drives scrolling; native smooth scroll would fight it. */
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: var(--void);
+  color: var(--cream);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--ox-500);
+  color: var(--cream);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ox-300);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Type ---------- */
+
+.display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.display-xl {
+  font-size: clamp(2.4rem, 7.2vw, 6.75rem);
+}
+
+.display-lg {
+  font-size: clamp(2rem, 4.8vw, 3.75rem);
+}
+
+.display-md {
+  font-size: clamp(1.75rem, 4.2vw, 3rem);
+}
+
+.eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ox-300);
+}
+
+.eyebrow-dim {
+  color: var(--cream-faint);
+}
+
+.lede {
+  font-size: clamp(1.0625rem, 1.6vw, 1.375rem);
+  line-height: 1.55;
+  color: var(--cream-dim);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.body-dim {
+  color: var(--cream-dim);
+  text-wrap: pretty;
+}
+
+/* ---------- Layout ---------- */
+
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: clamp(4.5rem, 11vw, 9.5rem);
+  position: relative;
+}
+
+.band {
+  background: linear-gradient(180deg, var(--void) 0%, var(--deep) 48%, var(--void) 100%);
+}
+
+.hairline {
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------- Surfaces ---------- */
+
+.card {
+  position: relative;
+  background: linear-gradient(160deg, rgb(7 32 63 / 0.55) 0%, rgb(2 0 13 / 0.4) 100%);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  overflow: hidden;
+  transition:
+    border-color 0.5s var(--ease),
+    transform 0.5s var(--ease),
+    background 0.5s var(--ease);
+}
+
+.card::after {
+  /* A thin oxblood wash that arrives on hover, so the accent is felt not shouted. */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 90% at 0% 0%, var(--glow-ox) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease);
+  pointer-events: none;
+}
+
+.card:hover {
+  border-color: var(--rule-strong);
+  transform: translateY(-3px);
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.05rem 1.9rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.4s var(--ease),
+    color 0.4s var(--ease),
+    border-color 0.4s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+.btn-primary {
+  background: var(--cream);
+  color: var(--void);
+}
+
+.btn-primary:hover {
+  background: var(--ox-400);
+  color: var(--cream);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--cream);
+  border-color: var(--rule-strong);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ox-400);
+  background: rgb(163 36 28 / 0.12);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* ---------- Links ---------- */
+
+.link {
+  color: var(--cream);
+  text-decoration: none;
+  background-image: linear-gradient(var(--ox-300), var(--ox-300));
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.45s var(--ease);
+}
+
+.link:hover {
+  background-size: 100% 1px;
+}
+
+/* ---------- Motion ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.9s var(--ease-out),
+    transform 0.9s var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-2%, 1%);
+  }
+  50% {
+    transform: translate(1%, -2%);
+  }
+  75% {
+    transform: translate(2%, 2%);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*
+  Reduced motion: kill transforms and looping animation, keep everything readable.
+  Reveals must land in their visible state or content disappears entirely.
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
