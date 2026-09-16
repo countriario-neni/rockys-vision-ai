@@ -18,6 +18,8 @@ export const SITE = {
   bookingUrl: "https://cal.com/rakesh-gogineni-udonap/ai-systems-free-audit",
   whatsapp: "+91 90638 55903",
   phoneUs: "+1 201 347 7569",
+  /** Second India line, added 2026-09-16. Voice only — WhatsApp stays on the number above. */
+  phoneIn: "+91 63096 10316",
   email: "rakesh@rockysolutionsllc.com",
   linkedin: "https://www.linkedin.com/in/goginenirakeshbabu/",
 

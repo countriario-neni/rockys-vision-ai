@@ -115,6 +115,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <span aria-hidden="true">&#9742;</span>
+                <a className="link" href={`tel:${SITE.phoneIn.replace(/\s/g, "")}`}>
+                  {SITE.phoneIn}
+                </a>
+              </li>
+              <li>
                 <span aria-hidden="true">&#9993;</span>
                 <a className="link" href={`mailto:${SITE.email}`}>
                   {SITE.email}
@@ -173,12 +179,21 @@ export default function Footer() {
           width: 8px; height: 8px; border-radius: 50%;
           border: 1px solid var(--ox-300); translate: 0 -50%;
         }
-        .foot-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .6rem; font-size: .92rem; }
+        .foot-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .15rem; font-size: .92rem; }
+        /*
+          Thumb-sized hit areas. The padding does the work and the negative margin
+          takes the extra layout height back out, so the footer does not grow by the
+          ~160px that ten 44px rows would otherwise add on a phone.
+        */
+        .foot-list a {
+          display: inline-flex; align-items: center; min-height: 40px;
+          padding-block: .35rem; margin-block: -.28rem;
+        }
         .foot-contact li { display: flex; gap: .6rem; align-items: flex-start; }
         .foot-contact li > span:first-child { color: var(--ox-300); flex: none; width: 1.2em; }
         .foot-social { display: flex; gap: .6rem; margin-top: 1.4rem; }
         .foot-social a {
-          width: 40px; height: 40px; border-radius: 50%;
+          width: 44px; height: 44px; border-radius: 50%;
           display: grid; place-items: center;
           color: var(--cream); background: rgb(235 222 212 / .12);
           transition: background .3s var(--ease), transform .3s var(--ease);
@@ -190,6 +205,7 @@ export default function Footer() {
           display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;
         }
         .foot-legal { display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: .8rem; }
+        .foot-legal a { display: inline-flex; align-items: center; min-height: 40px; }
         .foot-address {
           font-style: normal;
           margin-top: 1rem;

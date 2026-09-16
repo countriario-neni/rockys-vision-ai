@@ -30,6 +30,14 @@ const CHANNELS = [
     primary: false,
   },
   {
+    label: "Call us",
+    detail: SITE.phoneIn,
+    action: `Or ${SITE.phoneUs} in the US`,
+    href: `tel:${SITE.phoneIn.replace(/\s/g, "")}`,
+    external: false,
+    primary: false,
+  },
+  {
     label: "Email",
     detail: SITE.email,
     action: "Write to us",
@@ -72,7 +80,7 @@ export default function Contact() {
       <section className="section" aria-labelledby="channels-heading">
         <div className="shell">
           <h2 id="channels-heading" className="eyebrow" style={{ marginBottom: "1.75rem" }}>
-            Four ways to reach us
+            Ways to reach us
           </h2>
 
           <div className="channel-grid">

@@ -374,12 +374,19 @@ img {
     flex-direction: row;
     align-items: stretch;
   }
+  /*
+    A fixed square thumbnail pinned to the top, not a column stretched to the row's
+    height. Capability copy runs to six or seven lines in this narrow column, and a
+    stretched container cropped those photos to a tall slice that lost the subject.
+  */
   .tile-media {
     flex: none;
     width: 38%;
     min-width: 0;
-    aspect-ratio: auto;
-    min-height: 150px;
+    aspect-ratio: 1;
+    min-height: 0;
+    align-self: flex-start;
+    border-radius: 12px 0 12px 0;
   }
   .tile-body {
     position: static;

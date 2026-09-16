@@ -81,7 +81,18 @@ export default function Nav() {
             transition: "height .45s var(--ease)",
           }}
         >
-          <Link prefetch={false} href="/" aria-label="Rocky's Vision AI — home" style={{ textDecoration: "none", color: "inherit" }}>
+          <Link
+            prefetch={false}
+            href="/"
+            aria-label="Rocky's Vision AI — home"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              display: "inline-flex",
+              alignItems: "center",
+              minHeight: 44,
+            }}
+          >
             <Logo compact={scrolled} />
           </Link>
 

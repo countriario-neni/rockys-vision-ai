@@ -87,7 +87,13 @@ export default function Founders() {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ fontSize: ".9rem", marginRight: "1.25rem" }}
+                          style={{
+                            fontSize: ".9rem",
+                            marginRight: "1.25rem",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            minHeight: 40,
+                          }}
                         >
                           {link.label} &#8599;
                         </a>

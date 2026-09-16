@@ -69,12 +69,17 @@ export default function ProposalForm() {
               Talk to a founder:
             </p>
             <p style={{ margin: 0, fontSize: ".95rem" }}>
-              <a className="link" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+              <a className="link contact-line" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
                 WhatsApp {SITE.whatsapp}
               </a>
             </p>
-            <p style={{ margin: ".4rem 0 0", fontSize: ".95rem" }}>
-              <a className="link" href={`mailto:${SITE.email}`}>
+            <p style={{ margin: 0, fontSize: ".95rem" }}>
+              <a className="link contact-line" href={`tel:${SITE.phoneIn.replace(/\s/g, "")}`}>
+                Call {SITE.phoneIn}
+              </a>
+            </p>
+            <p style={{ margin: 0, fontSize: ".95rem" }}>
+              <a className="link contact-line" href={`mailto:${SITE.email}`}>
                 {SITE.email}
               </a>
             </p>
@@ -139,6 +144,8 @@ export default function ProposalForm() {
           padding: clamp(1.25rem, 3vw, 2rem);
           box-shadow: 0 16px 40px rgb(7 32 63 / .08);
         }
+        /* Standalone contact links, so they need a thumb-sized hit area on a phone. */
+        .contact-line { display: inline-flex; align-items: center; min-height: 40px; }
         .prop-form { display: grid; gap: .7rem; }
         .prop-form label { display: block; }
         .prop-form textarea { resize: vertical; min-height: 6rem; }
