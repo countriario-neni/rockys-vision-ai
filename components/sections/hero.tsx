@@ -11,25 +11,25 @@ export default function Hero() {
     <section aria-labelledby="hero-heading" className="hero">
       <div className="hero-media" aria-hidden="true">
         {/*
-          The poster is the exact frame the loop starts on, so first paint is the same
-          still as before and the video takes over invisibly once it has buffered.
-          Portrait phones get a native 9:16 loop instead of a cover-cropped slice of the
-          landscape one. Reduced-motion visitors get the still only (see CSS below).
+          Space-to-Earth zoom, ending on a coastal city at night. The poster is the
+          loop's own first frame, so first paint is seamless and the video takes over
+          invisibly once buffered. One 16:9 file serves phones too — Earth and the city
+          sit centre-frame, so the portrait cover-crop keeps the subject. Reduced-motion
+          visitors get the still only (see CSS below).
         */}
         <video
           className="hero-video"
-          poster="/media/studio-wide.jpg"
+          poster="/media/hero-earth-poster.jpg"
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
         >
-          <source src="/media/hero-loop-portrait.mp4" type="video/mp4" media="(orientation: portrait)" />
-          <source src="/media/hero-loop.mp4" type="video/mp4" />
+          <source src="/media/hero-earth.mp4" type="video/mp4" />
         </video>
         {/* eslint-disable-next-line @next/next/no-img-element -- static export, no optimizer */}
-        <img className="hero-still" src="/media/studio-wide.jpg" alt="" fetchPriority="high" decoding="async" />
+        <img className="hero-still" src="/media/hero-earth-poster.jpg" alt="" fetchPriority="high" decoding="async" />
       </div>
       <div className="hero-scrim" aria-hidden="true" />
       <div className="slab hero-slab" aria-hidden="true" />
@@ -140,7 +140,8 @@ export default function Hero() {
         @media (max-width: 720px) {
           .hero { min-height: 0; padding-top: 72px; }
           .hero-grid { padding-block: clamp(2.5rem, 10vw, 4rem); }
-          .hero-media video, .hero-media img { object-position: 70% 30%; }
+          /* Centre the crop: the subject is mid-frame, unlike the old studio photo. */
+          .hero-media video, .hero-media img { object-position: 50% 35%; }
           .hero-scrim {
             background:
               linear-gradient(180deg, rgb(7 32 63 / .55) 0%, rgb(7 32 63 / .82) 60%, rgb(7 32 63 / .94) 100%);
