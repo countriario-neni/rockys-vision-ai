@@ -56,6 +56,33 @@ export default function Process() {
           height: 7px;
           border-radius: 999px;
           background: var(--ox-400);
+          z-index: 1;
+          transform: scale(0);
+          transition: transform .5s var(--ease-out);
+          transition-delay: var(--reveal-delay, 0ms);
+        }
+        /*
+          An oxblood line that draws along each step's rule as it reveals, staggered
+          with the step, so the four read as one sequence rather than four cards.
+        */
+        .process-item::after {
+          content: "";
+          position: absolute;
+          top: -1px;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: linear-gradient(90deg, var(--ox-500), var(--ox-300) 70%, transparent);
+          transform-origin: left;
+          transform: scaleX(0);
+          transition: transform 1.1s var(--ease-out);
+          transition-delay: calc(var(--reveal-delay, 0ms) + 180ms);
+        }
+        .process-item.is-visible::before { transform: scale(1); }
+        .process-item.is-visible::after { transform: scaleX(1); }
+        @media (prefers-reduced-motion: reduce) {
+          .process-item::before { transform: scale(1); }
+          .process-item::after { transform: scaleX(1); }
         }
         .process-step {
           font-family: var(--font-mono), monospace;

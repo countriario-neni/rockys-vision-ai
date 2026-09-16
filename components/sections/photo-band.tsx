@@ -7,8 +7,20 @@ export default function PhotoBand() {
   return (
     <section className="pband" aria-label="We are ready to help your brand grow">
       <div className="pband-media" aria-hidden="true">
+        {/* Same loop as the portrait hero; its first frame is this still, so it takes over seamlessly. */}
+        <video
+          className="pband-video"
+          poster="/reel/creative-studio.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+        >
+          <source src="/media/hero-loop-portrait.mp4" type="video/mp4" />
+        </video>
         {/* eslint-disable-next-line @next/next/no-img-element -- static export, no optimizer */}
-        <img src="/reel/creative-studio.jpg" alt="" loading="lazy" decoding="async" />
+        <img className="pband-still" src="/reel/creative-studio.jpg" alt="" loading="lazy" decoding="async" />
       </div>
       <div className="slab pband-slab" aria-hidden="true" />
 
@@ -35,9 +47,15 @@ export default function PhotoBand() {
           background: var(--deep);
         }
         .pband-media { position: absolute; inset: 0; }
+        .pband-media video,
         .pband-media img {
           width: 100%; height: 100%; object-fit: cover; object-position: 40% 30%; display: block;
           filter: saturate(.85);
+        }
+        .pband-media .pband-still { display: none; }
+        @media (prefers-reduced-motion: reduce), (prefers-reduced-data: reduce) {
+          .pband-media .pband-video { display: none; }
+          .pband-media .pband-still { display: block; }
         }
         .pband-slab { width: clamp(40%, 44vw, 52%); }
         .pband-row { position: relative; z-index: 1; display: flex; justify-content: flex-end; padding-block: 3rem; }

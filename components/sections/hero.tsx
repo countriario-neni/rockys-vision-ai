@@ -10,8 +10,26 @@ export default function Hero() {
   return (
     <section aria-labelledby="hero-heading" className="hero">
       <div className="hero-media" aria-hidden="true">
+        {/*
+          The poster is the exact frame the loop starts on, so first paint is the same
+          still as before and the video takes over invisibly once it has buffered.
+          Portrait phones get a native 9:16 loop instead of a cover-cropped slice of the
+          landscape one. Reduced-motion visitors get the still only (see CSS below).
+        */}
+        <video
+          className="hero-video"
+          poster="/media/studio-wide.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        >
+          <source src="/media/hero-loop-portrait.mp4" type="video/mp4" media="(orientation: portrait)" />
+          <source src="/media/hero-loop.mp4" type="video/mp4" />
+        </video>
         {/* eslint-disable-next-line @next/next/no-img-element -- static export, no optimizer */}
-        <img src="/media/studio-wide.jpg" alt="" fetchPriority="high" decoding="async" />
+        <img className="hero-still" src="/media/studio-wide.jpg" alt="" fetchPriority="high" decoding="async" />
       </div>
       <div className="hero-scrim" aria-hidden="true" />
       <div className="slab hero-slab" aria-hidden="true" />
@@ -61,12 +79,19 @@ export default function Hero() {
           padding-top: 84px;
         }
         .hero-media { position: absolute; inset: 0; }
+        .hero-media video,
         .hero-media img {
           width: 100%; height: 100%; object-fit: cover; object-position: 60% 40%;
           display: block;
-          animation: hero-zoom 14s var(--ease-out) both;
         }
+        /* Scoped under .hero-media so these outrank the shared video/img rule above. */
+        .hero-media .hero-still { display: none; animation: hero-zoom 14s var(--ease-out) both; }
         @keyframes hero-zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+        /* Reduced motion (or a data-saver preference): the still, with no loop playing. */
+        @media (prefers-reduced-motion: reduce), (prefers-reduced-data: reduce) {
+          .hero-media .hero-video { display: none; }
+          .hero-media .hero-still { display: block; animation: none; }
+        }
         .hero-scrim {
           position: absolute; inset: 0;
           background:
@@ -115,7 +140,7 @@ export default function Hero() {
         @media (max-width: 720px) {
           .hero { min-height: 0; padding-top: 72px; }
           .hero-grid { padding-block: clamp(2.5rem, 10vw, 4rem); }
-          .hero-media img { object-position: 70% 30%; }
+          .hero-media video, .hero-media img { object-position: 70% 30%; }
           .hero-scrim {
             background:
               linear-gradient(180deg, rgb(7 32 63 / .55) 0%, rgb(7 32 63 / .82) 60%, rgb(7 32 63 / .94) 100%);
