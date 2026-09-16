@@ -67,6 +67,34 @@ export const EXPERTISE = [
   },
 ] as const;
 
+/*
+  The four stages of a business's life, as the home-page orbit tells it. Each hook is a
+  brand statement in our own voice — not a quotation, not attributed to anyone — and
+  the body names what we build at that stage. The orbit cycles through them in order.
+*/
+export const LIFECYCLE = [
+  {
+    stage: "Launch",
+    hook: "Be seen before anyone knows you exist.",
+    body: "Brand, site and the first content in market — built in weeks, and owned outright.",
+  },
+  {
+    stage: "Attract",
+    hook: "Buyers, not just followers.",
+    body: "Short-form video, search and paid campaigns that put you in front of people ready to spend.",
+  },
+  {
+    stage: "Convert",
+    hook: "Every enquiry answered. Every lead followed up.",
+    body: "AI chat and voice agents that qualify, book and hand off to your team — around the clock.",
+  },
+  {
+    stage: "Scale",
+    hook: "Growth that compounds instead of stalls.",
+    body: "Pipelines, tracking and automation you own, so the engine runs without adding headcount.",
+  },
+] as const;
+
 export const NAV = [
   { label: "Services", href: "/services/" },
   { label: "Process", href: "/#process" },

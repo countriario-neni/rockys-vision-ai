@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { SITE, NAV, EXPERTISE } from "@/content/site";
+import { SITE, NAV, EXPERTISE, LIFECYCLE } from "@/content/site";
 import { SERVICES, CAPABILITIES, PROCESS, FAQS } from "@/content/services";
 import { FOUNDERS } from "@/content/founders";
 import { whatsappHref } from "@/lib/contact";
@@ -53,7 +53,7 @@ describe("US entity details", () => {
 });
 
 describe("no fabricated proof", () => {
-  const allCopy = JSON.stringify({ SITE, SERVICES, CAPABILITIES, FAQS, FOUNDERS, EXPERTISE });
+  const allCopy = JSON.stringify({ SITE, SERVICES, CAPABILITIES, FAQS, FOUNDERS, EXPERTISE, LIFECYCLE });
 
   it("has no data structure that could hold a testimonial or client logo", () => {
     // Checked as shape, not as wording: the FAQ legitimately uses the word
@@ -69,7 +69,7 @@ describe("no fabricated proof", () => {
         }
       }
     };
-    walk({ SITE, SERVICES, CAPABILITIES, FAQS, FOUNDERS, EXPERTISE });
+    walk({ SITE, SERVICES, CAPABILITIES, FAQS, FOUNDERS, EXPERTISE, LIFECYCLE });
 
     for (const banned of ["testimonial", "testimonials", "quote", "clients", "logos", "review", "reviews"]) {
       expect(keys).not.toContain(banned);

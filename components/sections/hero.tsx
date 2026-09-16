@@ -32,7 +32,6 @@ export default function Hero() {
         <img className="hero-still" src="/media/hero-earth-poster.jpg" alt="" fetchPriority="high" decoding="async" />
       </div>
       <div className="hero-scrim" aria-hidden="true" />
-      <div className="slab hero-slab" aria-hidden="true" />
 
       <div className="shell hero-grid">
         <div className="hero-copy">
@@ -98,11 +97,6 @@ export default function Hero() {
             linear-gradient(90deg, rgb(7 32 63 / .88) 0%, rgb(7 32 63 / .62) 45%, rgb(7 32 63 / .15) 100%),
             linear-gradient(0deg, rgb(2 0 13 / .5) 0%, transparent 40%);
         }
-        .hero-slab {
-          opacity: .92;
-          animation: slide-in-right 1.1s var(--ease-out) both;
-          animation-delay: 200ms;
-        }
         .hero-grid { position: relative; z-index: 1; padding-block: clamp(3rem, 8vw, 6rem); }
         .hero-copy { max-width: 46rem; }
         .hero-title {
@@ -145,11 +139,6 @@ export default function Hero() {
           .hero-scrim {
             background:
               linear-gradient(180deg, rgb(7 32 63 / .55) 0%, rgb(7 32 63 / .82) 60%, rgb(7 32 63 / .94) 100%);
-          }
-          .hero-slab {
-            width: 46%; opacity: .9;
-            clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 100%);
-            inset-block: 40% 0;
           }
         }
       `}</style>
