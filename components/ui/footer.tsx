@@ -35,7 +35,7 @@ export default function Footer() {
                 {SITE.parent}
               </a>
               . Short-form video, generated creative, paid ads and the software underneath, for
-              fitness brands in {SITE.markets.join(", ")}.
+              growing brands in {SITE.markets.join(", ")}.
             </p>
             <div className="foot-social">
               <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -132,12 +132,22 @@ export default function Footer() {
 
         <div className="hairline foot-bottom">
           <p className="eyebrow eyebrow-dim" style={{ margin: 0 }}>
-            &copy; {new Date().getFullYear()} {SITE.name} &middot; All rights reserved
+            &copy; {new Date().getFullYear()} {SITE.entity.legalName} &middot; All rights reserved
           </p>
-          <p className="eyebrow eyebrow-dim" style={{ margin: 0 }}>
-            Built in-house
-          </p>
+          <nav aria-label="Legal" className="foot-legal">
+            <Link prefetch={false} className="link" href="/privacy/">
+              Privacy Policy
+            </Link>
+            <Link prefetch={false} className="link" href="/terms/">
+              Terms of Service
+            </Link>
+          </nav>
         </div>
+
+        <address className="foot-address">
+          {SITE.entity.legalName} &middot; a Missouri limited liability company &middot;{" "}
+          {SITE.entity.city}, {SITE.entity.state}, United States
+        </address>
       </div>
 
       <style>{`
@@ -178,6 +188,13 @@ export default function Footer() {
           margin-top: clamp(2.5rem, 6vw, 4rem);
           padding-top: 1.5rem;
           display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;
+        }
+        .foot-legal { display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: .8rem; }
+        .foot-address {
+          font-style: normal;
+          margin-top: 1rem;
+          font-size: .8rem;
+          color: var(--ink-faint);
         }
       `}</style>
     </footer>

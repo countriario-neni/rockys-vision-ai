@@ -8,7 +8,7 @@ export default function PhotoBand() {
     <section className="pband" aria-label="We are ready to help your brand grow">
       <div className="pband-media" aria-hidden="true">
         {/* eslint-disable-next-line @next/next/no-img-element -- static export, no optimizer */}
-        <img src="/reel/physique-studio.jpg" alt="" loading="lazy" decoding="async" />
+        <img src="/reel/creative-studio.jpg" alt="" loading="lazy" decoding="async" />
       </div>
       <div className="slab pband-slab" aria-hidden="true" />
 

@@ -27,6 +27,31 @@ describe("domain and deploy target", () => {
   });
 });
 
+describe("US entity details", () => {
+  it("fills every published entity field", () => {
+    for (const [field, value] of Object.entries(SITE.entity)) {
+      expect(value, `SITE.entity.${field}`).not.toBe("FILL_ME");
+      expect(value.trim().length, `SITE.entity.${field}`).toBeGreaterThan(0);
+    }
+  });
+
+  it("matches the Missouri Articles of Organization", () => {
+    expect(SITE.entity.legalName).toBe("Rocky Solutions LLC");
+    expect(SITE.entity.state).toBe("Missouri");
+    expect(SITE.entity.stateCode).toBe("MO");
+    expect(SITE.entity.country).toBe("US");
+  });
+
+  it("publishes no street address, because the one on file is a residence", () => {
+    // Locality is deliberate: see the comment on SITE.entity. Adding a street here
+    // would put the owner's home address in the footer of every page and into the
+    // structured data search engines cache.
+    expect(SITE.entity).not.toHaveProperty("street");
+    const published = JSON.stringify(SITE.entity);
+    expect(published).not.toMatch(/\d+\s+\w+.*\b(dr|drive|st|street|ave|avenue|rd|road|ln|lane|way|ct|court|blvd)\b/i);
+  });
+});
+
 describe("no fabricated proof", () => {
   const allCopy = JSON.stringify({ SITE, SERVICES, CAPABILITIES, FAQS, FOUNDERS, EXPERTISE });
 
@@ -70,9 +95,9 @@ describe("no fabricated proof", () => {
 });
 
 describe("service model", () => {
-  it("has four core lines with unique slugs", () => {
-    expect(SERVICES).toHaveLength(4);
-    expect(new Set(SERVICES.map((s) => s.slug)).size).toBe(4);
+  it("has five core lines with unique slugs", () => {
+    expect(SERVICES).toHaveLength(5);
+    expect(new Set(SERVICES.map((s) => s.slug)).size).toBe(5);
   });
 
   it("gives every service the content its page renders", () => {
@@ -86,10 +111,10 @@ describe("service model", () => {
   });
 
   it("gives every solution tile a photo that exists on disk", () => {
-    // Thirteen tiles, thirteen generated frames. A missing file ships as a broken image.
+    // Fourteen tiles, fourteen generated frames. A missing file ships as a broken image.
     const tiles = [...SERVICES, ...CAPABILITIES];
-    expect(tiles).toHaveLength(13);
-    expect(new Set(tiles.map((t) => t.slug)).size).toBe(13);
+    expect(tiles).toHaveLength(14);
+    expect(new Set(tiles.map((t) => t.slug)).size).toBe(14);
     for (const tile of tiles) {
       expect(tile.image).toBe(`/solutions/${tile.slug}.jpg`);
       expect(existsSync(join(process.cwd(), "public", tile.image))).toBe(true);

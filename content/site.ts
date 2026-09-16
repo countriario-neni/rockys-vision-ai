@@ -6,11 +6,11 @@ export const SITE = {
   parent: "Rocky Solutions LLC",
   parentUrl: "https://portfolio.hirerockysolutions.com",
   domain: "https://hirerockysolutions.com",
-  tagline: "Content, marketing and AI systems for fitness brands",
+  tagline: "Content, marketing and AI systems for growing brands",
 
   // The one-line pitch. Reused as the meta description and the hero body.
   pitch:
-    "We build the content engine behind supplement brands, gyms and fitness apparel labels — short-form video, AI-generated creative, paid ads and the social presence that ties them together, engineered by people who also ship the software underneath it.",
+    "We build the content engine behind ambitious brands — short-form video, AI-generated creative, paid ads and the social presence that ties them together, engineered by people who also ship the software underneath it.",
 
   // Contact. Booking is the primary CTA; WhatsApp is the low-friction fallback.
   // These are Rocky Solutions' live channels — verified, not placeholders.
@@ -23,6 +23,25 @@ export const SITE = {
 
   // Dual market. Copy stays currency-neutral; pricing is deliberately not published.
   markets: ["India", "United States", "United Kingdom", "UAE"],
+
+  /*
+    Registered US entity, per the Missouri Articles of Organization on file. Published
+    in the footer, the legal pages and the JSON-LD PostalAddress.
+
+    Deliberately city + state only. The principal office address on the filing is the
+    owner's residence, and a street address in the page footer is scraped, indexed and
+    cached permanently. Locality is enough to establish the US business for search and
+    for the governing-law clause. Do not add `street` without the owner's explicit
+    say-so — a test enforces this.
+  */
+  entity: {
+    legalName: "Rocky Solutions LLC",
+    city: "Wentzville",
+    state: "Missouri",
+    /** USPS abbreviation, for the schema.org addressRegion. */
+    stateCode: "MO",
+    country: "US",
+  },
 } as const;
 
 // The four things the founders are experts in, stated up front. This is the strip that

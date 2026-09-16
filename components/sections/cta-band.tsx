@@ -10,9 +10,9 @@ type Props = {
 // Skyhit's mid-page band: a photograph under a navy scrim, one line of copy, one
 // button. Used twice on the home page with different photos.
 export default function CtaBand({
-  heading = "Accelerate your brand's growth with a content engine built for fitness",
+  heading = "Accelerate your brand's growth with a content engine built for results",
   cta = "Get a free plan",
-  image = "/reel/gym-duo.jpg",
+  image = "/reel/studio-duo.jpg",
 }: Props) {
   return (
     <section className="cta-band band" aria-label="Call to action">

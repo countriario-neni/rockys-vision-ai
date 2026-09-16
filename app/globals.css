@@ -30,11 +30,18 @@
   --ox-500: #a3241c;
   --ox-400: #c9382c;
   --ox-300: #e3594a;
+  /* Lightest step: the only one that clears 4.5:1 for small text on navy (6.1:1). */
+  --ox-200: #ee7f70;
 
-  /* Semantic. Light context by default. */
+  /*
+    Semantic. Light context by default.
+    Dim/faint opacities are set where they clear WCAG 2.1 AA for normal text against
+    their own ground (--ink-dim 7.4:1, --ink-faint 5.5:1) — .eyebrow-dim renders at
+    11px, so 3:1 "large text" allowances do not apply. Do not lower these.
+  */
   --ink: var(--void);
   --ink-dim: rgb(2 0 13 / 0.68);
-  --ink-faint: rgb(2 0 13 / 0.46);
+  --ink-faint: rgb(2 0 13 / 0.6);
   --heading: var(--ox-900);
   --accent: var(--ox-700);
   --accent-hi: var(--ox-500);
@@ -60,11 +67,11 @@
 .tile-dark {
   --ink: var(--cream);
   --ink-dim: rgb(235 222 212 / 0.72);
-  --ink-faint: rgb(235 222 212 / 0.48);
+  --ink-faint: rgb(235 222 212 / 0.62);
   --heading: var(--cream);
   --accent: var(--ox-400);
-  --accent-hi: var(--ox-300);
-  --mark: var(--ox-300);
+  --accent-hi: var(--ox-200);
+  --mark: var(--ox-200);
   --rule: rgb(235 222 212 / 0.14);
   --rule-strong: rgb(235 222 212 / 0.3);
   --panel: rgb(235 222 212 / 0.06);

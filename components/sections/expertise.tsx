@@ -2,7 +2,7 @@ import { EXPERTISE } from "@/content/site";
 import Reveal from "@/components/motion/reveal";
 
 /*
-  Sits directly under the hero. Most fitness agencies are creative shops that outsource
+  Sits directly under the hero. Most marketing agencies are creative shops that outsource
   anything technical; this strip states the opposite up front, because it is the actual
   differentiator and the reason the AI work is credible.
 */

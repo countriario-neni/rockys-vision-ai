@@ -9,14 +9,14 @@ import Reveal from "@/components/motion/reveal";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Rocky's Vision AI is a two-founder content and marketing studio for fitness brands, built inside Rocky Solutions LLC — creative direction paired with real software and AI engineering.",
+    "Rocky's Vision AI is a two-founder content, marketing and AI systems studio for growing brands, built inside Rocky Solutions LLC — creative direction paired with real software and AI engineering.",
   alternates: { canonical: "/about/" },
 };
 
 const STORY = [
-  "Rocky's Vision AI is the fitness studio inside Rocky Solutions LLC. The parent company builds AI systems and custom software for businesses; this is the arm that points that capability at one industry we care about — supplements, gyms, apparel and the people selling them.",
-  "The reason we split it out is that fitness marketing has a specific problem. The category is saturated with content, the claims are regulated, the audience can smell a fake transformation photo from three frames away, and the brands that win are the ones producing genuinely good creative at a volume most studios cannot sustain. That is a production problem and an engineering problem at the same time.",
-  "So we built the studio around both. One founder runs creative and growth. The other builds the systems — the generation pipelines, the campaign tooling, the tracking — that let two people produce at the volume the category demands. It is a small operation on purpose: you get the founders, not a handoff chain.",
+  "Rocky's Vision AI is the content and AI systems studio inside Rocky Solutions LLC. The parent company builds AI systems and custom software for businesses; this is the arm that points that capability at content, marketing and the automation every business now needs — regardless of category.",
+  "The reason we built it this way is that modern marketing has a specific problem. Every category is saturated with content, attention is expensive, and the brands that win are the ones producing genuinely good creative and answering customers fast, at a volume most studios cannot sustain. That is a production problem and an engineering problem at the same time.",
+  "So we built the studio around both. One founder runs creative and growth. The other builds the systems — the generation pipelines, the AI agents, the campaign tooling, the tracking — that let two people produce at the volume any business demands. It is a small operation on purpose: you get the founders, not a handoff chain.",
 ];
 
 export default function About() {
@@ -29,7 +29,7 @@ export default function About() {
           </Reveal>
           <Reveal delay={80}>
             <h1 className="display display-xl" style={{ margin: "1.25rem 0 0", maxWidth: "16ch" }}>
-              A studio built for <span>one</span> industry
+              A studio built for <span>every</span> industry
             </h1>
           </Reveal>
         </div>

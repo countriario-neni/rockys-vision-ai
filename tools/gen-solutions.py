@@ -8,15 +8,19 @@ upscale for the tiles. Re-run with a slug argument to regenerate a single tile:
 
 Output: public/solutions/<slug>.jpg  (1024x1024, ~85% JPEG)
 """
-import sys, time, pathlib
+import os, sys, time, pathlib
 import torch
 from PIL import Image
 from diffusers import AutoPipelineForText2Image
 
+# Torch defaults to half the cores on this box; diffusion here is pure CPU matmul,
+# so giving it every core roughly halves the wall time per tile.
+torch.set_num_threads(os.cpu_count() or 4)
+
 OUT = pathlib.Path(__file__).resolve().parent.parent / "public" / "solutions"
 OUT.mkdir(parents=True, exist_ok=True)
 
-# One shared mood so the 13 tiles read as one set: warm cream light, deep navy
+# One shared mood so the 14 tiles read as one set: warm cream light, deep navy
 # shadows, oxblood accents, photographic, no text, no logos.
 MOOD = (
     ", editorial photograph, cinematic, shallow depth of field, warm cream key light, "
@@ -25,18 +29,19 @@ MOOD = (
 NEG = "text, watermark, logo, caption, blurry, deformed, lowres, cartoon, illustration, extra limbs"
 
 PROMPTS = {
-    "short-form-video": "athlete filmed on a smartphone gimbal in a moody gym, vertical video rig, ring light",
-    "ai-creative": "creative director at a studio workstation, large monitor showing a grid of generated fitness ad visuals of athletes, glowing screen light on the face, stylus tablet on the desk, futuristic",
+    "short-form-video": "creator filmed on a smartphone gimbal in a moody studio, vertical video rig, ring light",
+    "ai-creative": "creative director at a studio workstation, large monitor showing a grid of generated ad visuals for a product brand, glowing screen light on the face, stylus tablet on the desk, futuristic",
     "paid-ads": "marketer at a dark desk reviewing ad campaign dashboard on a monitor, soft screen glow",
-    "social-media-management": "content creator planning a social feed on a tablet at a gym cafe table, phone and notebook",
-    "search-engine-optimisation": "laptop showing search analytics graphs on a clean desk, coffee, morning light",
-    "local-seo": "modern boutique gym storefront at dusk, warm interior light through large windows, no signage, no lettering, street with a parked bicycle",
-    "branding-and-identity": "brand designer laying out fitness brand colour swatches and label mockups on a cream table",
-    "graphic-design": "designer's desk with supplement label prints, a tablet with pen, printed thumbnails and posters",
+    "social-media-management": "content creator planning a social feed on a tablet at a cafe table, phone and notebook",
+    "ai-agents": "close up of a phone screen showing an AI chat conversation beside a headset on a desk, soft blue glow, minimal office",
+    "search-engine-optimization": "laptop showing search analytics graphs on a clean desk, coffee, morning light",
+    "local-seo": "modern boutique storefront at dusk, warm interior light through large windows, no signage, no lettering, street with a parked bicycle",
+    "branding-and-identity": "brand designer laying out color swatches and packaging mockups on a cream table",
+    "graphic-design": "designer's desk with product label prints, a tablet with pen, printed thumbnails and posters",
     "software-and-web-development": "developer writing code on an ultrawide monitor in a dim office, navy ambient light",
     "lead-generation": "sales desk with headset, laptop CRM pipeline on screen, notebook of leads, warm lamp light",
-    "ecommerce": "fitness apparel and supplement products photographed for an online store, packaging boxes, studio",
-    "email-and-retention": "phone held in hand showing a branded email newsletter, gym bag and shaker bottle beside it",
+    "ecommerce": "consumer products and apparel photographed for an online store, packaging boxes, studio",
+    "email-and-retention": "phone held in hand showing a branded email newsletter, tote bag and coffee cup beside it",
     "analytics-and-tracking": "close up of analytics attribution charts on a large monitor, reflections, dark room",
 }
 

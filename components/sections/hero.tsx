@@ -11,7 +11,7 @@ export default function Hero() {
     <section aria-labelledby="hero-heading" className="hero">
       <div className="hero-media" aria-hidden="true">
         {/* eslint-disable-next-line @next/next/no-img-element -- static export, no optimizer */}
-        <img src="/media/gym-wide.jpg" alt="" fetchPriority="high" decoding="async" />
+        <img src="/media/studio-wide.jpg" alt="" fetchPriority="high" decoding="async" />
       </div>
       <div className="hero-scrim" aria-hidden="true" />
       <div className="slab hero-slab" aria-hidden="true" />
@@ -19,13 +19,13 @@ export default function Hero() {
       <div className="shell hero-grid">
         <div className="hero-copy">
           <p className="eyebrow hero-in" style={{ color: "var(--cream)", marginBottom: "1.25rem" }}>
-            Content &amp; marketing &middot; Supplements &middot; Gyms &middot; Apparel
+            Content &amp; marketing &middot; AI systems &middot; Every industry
           </p>
 
           <h1 id="hero-heading" className="hero-title">
             <span className="hero-in" style={{ animationDelay: "120ms" }}>The content engine</span>
             <span className="hero-in hero-title-accent" style={{ animationDelay: "240ms" }}>
-              behind fitness brands
+              behind growing brands
               <svg className="hero-mark" viewBox="0 0 40 40" aria-hidden="true">
                 <path d="M20 4 36 34H4Z" fill="var(--ox-300)" />
                 <path d="M20 14 29 30H11Z" fill="var(--deep)" />

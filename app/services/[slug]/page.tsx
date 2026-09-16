@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) return {};
 
-  const title = `${service.title} for fitness brands`;
+  const title = `${service.title} for growing brands`;
   return {
     title,
     description: service.summary,
@@ -165,7 +165,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
       <Cta
         heading={`Talk to us about ${service.title.toLowerCase()}.`}
-        body="Thirty minutes on your category and your catalogue, and a written scope a few days later. No deck, no obligation."
+        body="Thirty minutes on your category and your catalog, and a written scope a few days later. No deck, no obligation."
       />
 
       <style>{`

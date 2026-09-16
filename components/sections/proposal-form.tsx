@@ -13,7 +13,7 @@ import Reveal from "@/components/motion/reveal";
 */
 const NEXT = [
   "We read what you send and reply within one working day",
-  "A thirty-minute call on your category and catalogue",
+  "A thirty-minute call on your category and catalog",
   "A written scope a few days later — no deck, no obligation",
 ];
 
@@ -96,8 +96,8 @@ export default function ProposalForm() {
                 <input className="field" name="phone" placeholder="Phone number" type="tel" autoComplete="tel" />
               </label>
               <label>
-                <span className="sr-only">Brand or gym</span>
-                <input className="field" name="brand" placeholder="Brand, gym or label" autoComplete="organization" />
+                <span className="sr-only">Brand or business</span>
+                <input className="field" name="brand" placeholder="Brand or business name" autoComplete="organization" />
               </label>
               <label>
                 <span className="sr-only">Message</span>

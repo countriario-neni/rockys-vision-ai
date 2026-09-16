@@ -10,7 +10,7 @@ export default function NotFound() {
           That page isn&rsquo;t <span>here</span>
         </h1>
         <p className="lede" style={{ marginTop: "1.5rem" }}>
-          The link is wrong or the page has moved. The four things we actually do are below.
+          The link is wrong or the page has moved. What we actually do is below.
         </p>
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: ".7rem", marginTop: "2.25rem" }}>

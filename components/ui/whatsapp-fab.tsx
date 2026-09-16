@@ -21,6 +21,11 @@ export default function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Rocky's Vision AI on WhatsApp"
+      // While faded out the button is still in the DOM, so it must also leave the tab
+      // order and the accessibility tree — otherwise keyboard users focus an invisible
+      // link and screen readers announce a control that is not on screen.
+      aria-hidden={!shown}
+      tabIndex={shown ? undefined : -1}
       style={{
         position: "fixed",
         right: "clamp(1rem, 3vw, 2rem)",
@@ -32,7 +37,7 @@ export default function WhatsAppFab() {
         display: "grid",
         placeItems: "center",
         background: "var(--ox-500)",
-        color: "var(--ink)",
+        color: "var(--cream)",
         border: "1px solid var(--ox-400)",
         boxShadow: "0 10px 30px rgb(2 0 13 / 0.6)",
         opacity: shown ? 1 : 0,

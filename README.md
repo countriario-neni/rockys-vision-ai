@@ -1,6 +1,6 @@
 # Rocky's Vision AI
 
-Content, marketing and AI systems for fitness brands — supplements, gyms and apparel.
+Content, marketing and AI systems for growing brands, across every industry.
 A studio inside Rocky Solutions LLC.
 
 Live at **https://hirerockysolutions.com**
@@ -71,7 +71,7 @@ components/sections/ page sections
 components/ui/       nav, footer, logo, WhatsApp button
 components/motion/   Lenis provider, scroll reveal
 content/             site.ts, services.ts, founders.ts — all copy lives here
-public/reel|media/   stock reference imagery (Pexels License)
+public/reel|media/   generated reference imagery, see tools/gen-media.py
 tests/               vitest
 ```
 
@@ -79,7 +79,7 @@ All copy lives in `content/`. Components read it; they do not hold strings worth
 
 ## Image licensing
 
-Photography in `public/reel/` and `public/media/` is from Pexels under the
-[Pexels License](https://www.pexels.com/license/): free for commercial use, no
-attribution required, modification permitted. It is labelled on the page as reference
-material, not as the studio's own client work.
+Photography in `public/solutions/`, `public/reel/` and `public/media/` is generated
+locally with an open-weights model (`stabilityai/sdxl-turbo`, see `tools/gen-solutions.py`
+and `tools/gen-media.py`) — no stock library, no attribution required. It is labeled on
+the page as reference material, not as the studio's own client work.

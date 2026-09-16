@@ -60,8 +60,17 @@ const jsonLd = {
       "@type": "Organization",
       "@id": `${SITE.domain}/#org`,
       name: SITE.name,
+      legalName: SITE.entity.legalName,
       url: SITE.domain,
       description: SITE.pitch,
+      // Locality only, by design — see the note on SITE.entity.
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: SITE.entity.city,
+        addressRegion: SITE.entity.stateCode,
+        addressCountry: SITE.entity.country,
+      },
+      telephone: SITE.phoneUs,
       parentOrganization: { "@type": "Organization", name: SITE.parent, url: SITE.parentUrl },
       founder: FOUNDERS.map((f) => ({ "@type": "Person", name: f.name, jobTitle: f.role })),
       areaServed: SITE.markets.map((m) => ({ "@type": "Country", name: m })),
@@ -77,7 +86,7 @@ const jsonLd = {
       description: SITE.pitch,
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Content and marketing services for fitness brands",
+        name: "Content, marketing and AI systems services for growing brands",
         itemListElement: [
           ...SERVICES.map((s) => ({
             "@type": "Offer",
@@ -95,7 +104,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en-US" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <head>
         <script
           type="application/ld+json"

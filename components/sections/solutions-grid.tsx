@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   Clapperboard, Sparkles, Megaphone, Share2, Search, MapPin, Palette, PenTool,
-  Code2, Users, ShoppingBag, Mail, BarChart3, type LucideIcon,
+  Code2, Users, ShoppingBag, Mail, BarChart3, PhoneCall, type LucideIcon,
 } from "lucide-react";
 import { SERVICES, CAPABILITIES } from "@/content/services";
 import Reveal from "@/components/motion/reveal";
@@ -13,7 +13,8 @@ const ICONS: Record<string, LucideIcon> = {
   "ai-creative": Sparkles,
   "paid-ads": Megaphone,
   "social-media-management": Share2,
-  "search-engine-optimisation": Search,
+  "ai-agents": PhoneCall,
+  "search-engine-optimization": Search,
   "local-seo": MapPin,
   "branding-and-identity": Palette,
   "graphic-design": PenTool,
@@ -66,7 +67,7 @@ function Tile({ tile, i }: { tile: Tile; i: number }) {
 
 type Props = { heading?: string };
 
-export default function SolutionsGrid({ heading = "Everything a fitness brand needs to grow" }: Props) {
+export default function SolutionsGrid({ heading = "Everything a growing brand needs" }: Props) {
   return (
     <section id="services" className="section" aria-labelledby="solutions-heading">
       <div className="shell">
@@ -81,7 +82,7 @@ export default function SolutionsGrid({ heading = "Everything a fitness brand ne
             </Reveal>
             <Reveal delay={140}>
               <p className="lede" style={{ marginTop: "1.25rem", fontSize: "1.05rem" }}>
-                Four core lines carry the work. The rest exists to keep those four from leaking —
+                A handful of core lines carry the work. The rest exists to keep those from leaking —
                 a fast site, correct tracking, a brand that looks the same on every asset.
               </p>
             </Reveal>
@@ -116,7 +117,7 @@ export default function SolutionsGrid({ heading = "Everything a fitness brand ne
         .sol-grid-caps { margin-top: clamp(.9rem, 2vw, 1.4rem); }
         @media (min-width: 480px) { .sol-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 900px) {
-          .sol-grid-core { grid-template-columns: repeat(4, 1fr); }
+          .sol-grid-core { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
           .sol-grid-caps { grid-template-columns: repeat(3, 1fr); }
         }
       `}</style>

@@ -8,7 +8,7 @@ import Faq from "@/components/sections/faq";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a thirty-minute discovery call with Rocky's Vision AI, or message us on WhatsApp. Fitness brands in India, the US, the UK and the UAE.",
+    "Book a thirty-minute discovery call with Rocky's Vision AI, or message us on WhatsApp. Growing brands in India, the US, the UK and the UAE.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -62,7 +62,7 @@ export default function Contact() {
           </Reveal>
           <Reveal delay={140}>
             <p className="lede" style={{ marginTop: "1.75rem" }}>
-              Bring your category, your catalogue and what you have already tried. We will tell
+              Bring your category, your catalog and what you have already tried. We will tell
               you honestly whether we are the right studio for it — and if we are not, who is.
             </p>
           </Reveal>
@@ -105,10 +105,10 @@ export default function Contact() {
                 <li>What you sell, and to whom</li>
                 <li>What you are posting now, and where</li>
                 <li>What you have spent on ads, and what it returned</li>
-                <li>Which of the four lines you think you need</li>
+                <li>Which of our service lines you think you need</li>
               </ul>
               <p className="body-dim" style={{ fontSize: ".92rem", marginTop: "1.5rem", marginBottom: 0, maxWidth: "60ch" }}>
-                Not sure which line? That is the call. The four are{" "}
+                Not sure which line? That is the call. Our core lines are{" "}
                 {SERVICES.map((s) => s.title).join(", ")} — most brands start with one.
               </p>
             </div>

@@ -26,7 +26,7 @@ export default function Home() {
       <CtaBand
         heading="Let's work together — tell us what you sell and where it is stuck"
         cta="Book a call"
-        image="/reel/gym-dark.jpg"
+        image="/reel/studio-dark.jpg"
       />
       <ProposalForm />
     </>

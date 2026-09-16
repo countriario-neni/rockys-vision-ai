@@ -44,15 +44,15 @@ export default function AboutOrbit() {
           </Reveal>
           <Reveal delay={140}>
             <p style={{ marginTop: "1.25rem", fontSize: "1.05rem", color: "var(--ox-700)", fontWeight: 500 }}>
-              Committed to content, campaigns and AI systems that a fitness brand can actually
+              Committed to content, campaigns and AI systems that any growing brand can actually
               run.
             </p>
           </Reveal>
           <Reveal delay={200}>
             <p className="body-dim" style={{ marginTop: ".75rem", maxWidth: "52ch" }}>
               {SITE.name} is a specialist studio inside {SITE.parent}. We make the short-form
-              video, generated creative and paid campaigns that move supplements, gyms and
-              apparel — and we build the software and tracking underneath, so the numbers survive
+              video, generated creative and paid campaigns that move product, service and retail
+              brands — and we build the software and tracking underneath, so the numbers survive
               scrutiny.
             </p>
           </Reveal>

@@ -21,9 +21,9 @@ export const SERVICES: Service[] = [
     title: "Short-Form Video",
     short: "Reels, Shorts and TikToks built to stop the scroll",
     summary:
-      "The format that moves supplement and apparel brands. Hook-first edits, shot or sourced, cut to a posting cadence you can actually sustain.",
+      "The format that moves product and service brands alike. Hook-first edits, shot or sourced, cut to a posting cadence you can actually sustain.",
     intro:
-      "Fitness is the most video-saturated category on the internet. A tub of protein does not sell itself in a static grid post — it sells in three seconds of movement, tension and a claim someone believes. We produce short-form at the volume the algorithm rewards, without the quality collapse that usually comes with volume.",
+      "Short-form is the most attention-dense format on the internet, and it does not forgive a slow open. A product or an offer does not sell itself in a static grid post — it sells in three seconds of movement, tension and a claim someone believes. We produce short-form at the volume the algorithm rewards, without the quality collapse that usually comes with volume.",
     deliverables: [
       {
         title: "Hook-first editing",
@@ -31,7 +31,7 @@ export const SERVICES: Service[] = [
       },
       {
         title: "Shoot direction",
-        body: "Shot lists, athlete direction and lighting notes your team can execute in a gym, or a full remote-directed shoot day where we run the session over call.",
+        body: "Shot lists, talent direction and lighting notes your team can execute on-site, or a full remote-directed shoot day where we run the session over call.",
       },
       {
         title: "Captions and on-screen type",
@@ -43,7 +43,7 @@ export const SERVICES: Service[] = [
       },
       {
         title: "Posting cadence",
-        body: "A calendar you can hold — volume matched to what your catalogue and athlete access can actually feed.",
+        body: "A calendar you can hold — volume matched to what your catalog and talent access can actually feed.",
       },
     ],
     process: [
@@ -69,10 +69,10 @@ export const SERVICES: Service[] = [
       },
     ],
     fitFor: [
-      "Supplement brands",
-      "Gym and studio chains",
-      "Fitness apparel labels",
-      "Coaches scaling past word of mouth",
+      "Ecommerce and product brands",
+      "Multi-location service businesses",
+      "Apparel and consumer goods labels",
+      "Founders and experts scaling past word of mouth",
     ],
   },
   {
@@ -84,18 +84,18 @@ export const SERVICES: Service[] = [
     summary:
       "The Vision in Vision AI. Generated product visuals, presenters and endless ad variants — used where it beats a camera, and never where it does not.",
     intro:
-      "AI generation is not a gimmick line on a rate card, and it is not a replacement for a real shoot. It is the fastest way we know to test forty creative directions in the time a studio books one. We use it for variant volume, for product visuals that would cost a studio day, and for presenters in markets where you have no athlete on the ground — and we tell you plainly when a camera is the better call.",
+      "AI generation is not a gimmick line on a rate card, and it is not a replacement for a real shoot. It is the fastest way we know to test forty creative directions in the time a studio books one. We use it for variant volume, for product visuals that would cost a studio day, and for presenters in markets where you have no talent on the ground — and we tell you plainly when a camera is the better call.",
     deliverables: [
       {
-        title: "Product visualisation",
-        body: "Generated environments and hero shots for tubs, bottles, packs and apparel, matched to your existing brand photography.",
+        title: "Product visualization",
+        body: "Generated environments and hero shots for products, packaging and apparel, matched to your existing brand photography.",
       },
       {
         title: "AI presenters and avatars",
         body: "Consistent on-screen presenters for markets or languages where you have no talent, with disclosure handled honestly.",
       },
       {
-        title: "Voiceover and localisation",
+        title: "Voiceover and localization",
         body: "Synthetic voice for scale, human voice where it matters, and the same script running across multiple languages.",
       },
       {
@@ -126,12 +126,12 @@ export const SERVICES: Service[] = [
       {
         step: "04",
         title: "Finish",
-        body: "Colour, retouch, motion and audio applied by hand so the output reads as brand work, not as output.",
+        body: "Color, retouch, motion and audio applied by hand so the output reads as brand work, not as output.",
       },
     ],
     fitFor: [
       "Brands testing at paid-social volume",
-      "Catalogues too large to shoot",
+      "Catalogs too large to shoot",
       "Multi-market launches",
       "Teams without local talent access",
     ],
@@ -145,18 +145,18 @@ export const SERVICES: Service[] = [
     summary:
       "Creative, campaign structure and the reporting that ties spend to revenue. Built for brands who want the number, not the dashboard screenshot.",
     intro:
-      "Most fitness ad accounts fail on creative volume, not on targeting. Platforms have taken most of the targeting decisions away — what is left is how many genuinely different creative angles you can put into the machine, and how honestly you read the result. We run both halves: the creative and the account.",
+      "Most ad accounts fail on creative volume, not on targeting. Platforms have taken most of the targeting decisions away — what is left is how many genuinely different creative angles you can put into the machine, and how honestly you read the result. We run both halves: the creative and the account.",
     deliverables: [
       {
         title: "Creative production for paid",
-        body: "Ads built as ads — not organic posts boosted, which is where most fitness budgets quietly disappear.",
+        body: "Ads built as ads — not organic posts boosted, which is where most ad budgets quietly disappear.",
       },
       {
         title: "Campaign structure",
         body: "Account architecture on Meta and Google that lets you read a result instead of guessing at one.",
       },
       {
-        title: "Testing programme",
+        title: "Testing program",
         body: "A standing cadence of angle, hook and offer tests, with a documented rule for when a variant is killed.",
       },
       {
@@ -191,9 +191,9 @@ export const SERVICES: Service[] = [
       },
     ],
     fitFor: [
-      "Ecommerce supplement brands",
-      "Gyms running local acquisition",
-      "Apparel launches",
+      "Ecommerce and product brands",
+      "Local and multi-location businesses",
+      "Apparel and consumer launches",
       "Anyone whose ROAS stopped making sense",
     ],
   },
@@ -204,9 +204,9 @@ export const SERVICES: Service[] = [
     title: "Social Media Management",
     short: "The whole presence, run end to end",
     summary:
-      "Strategy, calendar, publishing, community and athlete coordination — the unglamorous operating layer that makes everything else compound.",
+      "Strategy, calendar, publishing, community and creator coordination — the unglamorous operating layer that makes everything else compound.",
     intro:
-      "Content without an operating layer is a pile of files. Social management is the part that turns individual assets into a presence: a calendar that holds, replies that go out the same day, athlete and influencer relationships that get coordinated rather than chased, and a monthly read of what actually moved.",
+      "Content without an operating layer is a pile of files. Social management is the part that turns individual assets into a presence: a calendar that holds, replies that go out the same day, creator and influencer relationships that get coordinated rather than chased, and a monthly read of what actually moved.",
     deliverables: [
       {
         title: "Channel strategy",
@@ -221,7 +221,7 @@ export const SERVICES: Service[] = [
         body: "Comments and DMs answered in your voice, within a response window we agree, including the ones that are complaints.",
       },
       {
-        title: "Athlete and influencer coordination",
+        title: "Creator and influencer coordination",
         body: "Briefs out, assets in, usage rights tracked, and the relationship kept warm between campaigns.",
       },
       {
@@ -254,8 +254,69 @@ export const SERVICES: Service[] = [
     fitFor: [
       "Brands with no in-house social team",
       "Teams drowning in community management",
-      "Multi-location gym groups",
-      "Labels running athlete rosters",
+      "Multi-location business groups",
+      "Labels running creator rosters",
+    ],
+  },
+  {
+    slug: "ai-agents",
+    image: "/solutions/ai-agents.jpg",
+    number: "05",
+    title: "AI Agents & Voice",
+    short: "Chatbots, voice agents and calling workflows that run your front line",
+    summary:
+      "Custom AI chatbots, inbound and outbound voice agents, and the workflows around them — built and owned by the same engineers who ship your content pipelines.",
+    intro:
+      "Most businesses lose leads and hours to the same gap: nobody answers fast enough. We design and build AI chatbots and voice agents that pick up the call, answer the DM, qualify the lead and book the appointment — custom-coded to your business, your scripts and your systems, not a generic bot bolted onto a website.",
+    deliverables: [
+      {
+        title: "AI chatbots",
+        body: "Website and social chat agents trained on your business, your offers and your FAQs, handing off to a human exactly when they should.",
+      },
+      {
+        title: "Inbound voice agents",
+        body: "AI phone agents that answer, qualify and route calls in your business's voice, around the clock.",
+      },
+      {
+        title: "Outbound calling agents",
+        body: "Automated outbound campaigns for follow-up, reminders and re-engagement, with a human takeover path built in.",
+      },
+      {
+        title: "Custom workflow design",
+        body: "The logic, integrations and handoffs designed and curated specifically for how your business actually operates — not a template.",
+      },
+      {
+        title: "CRM and system integration",
+        body: "Agents wired into your calendar, CRM and messaging tools, so a booked call or captured lead lands where your team already works.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Workflow mapping",
+        body: "We map how a lead or customer actually moves through your business today, and where the gap is costing you the most.",
+      },
+      {
+        step: "02",
+        title: "Agent design",
+        body: "Scripts, decision logic and escalation rules written for your business specifically, then reviewed with you before anything goes live.",
+      },
+      {
+        step: "03",
+        title: "Build and integrate",
+        body: "The chatbot or voice agent built, tested against real conversations, and connected to your calendar, CRM and phone lines.",
+      },
+      {
+        step: "04",
+        title: "Run and refine",
+        body: "Live monitoring, transcript review and a monthly tuning pass so the agent improves against what actually happened on calls.",
+      },
+    ],
+    fitFor: [
+      "Businesses missing calls and DMs after hours",
+      "Teams drowning in repetitive inbound questions",
+      "Anyone running manual outbound follow-up",
+      "Multi-location businesses needing consistent front-line handling",
     ],
   },
 ];
@@ -266,16 +327,16 @@ export type Capability = { slug: string; image: string; title: string; body: str
 
 export const CAPABILITIES: Capability[] = [
   {
-    slug: "search-engine-optimisation",
-    image: "/solutions/search-engine-optimisation.jpg",
-    title: "Search Engine Optimisation",
-    body: "Technical and content SEO for supplement and fitness ecommerce, built around the queries that carry buying intent.",
+    slug: "search-engine-optimization",
+    image: "/solutions/search-engine-optimization.jpg",
+    title: "Search Engine Optimization",
+    body: "Technical and content SEO for ecommerce and service businesses, built around the queries that carry buying intent.",
   },
   {
     slug: "local-seo",
     image: "/solutions/local-seo.jpg",
     title: "Local SEO",
-    body: "Google Business Profile, maps ranking and citations for gyms and studios competing inside a five-kilometre radius.",
+    body: "Google Business Profile, maps ranking and citations for local and multi-location businesses competing inside a five-kilometre radius.",
   },
   {
     slug: "branding-and-identity",
@@ -299,19 +360,19 @@ export const CAPABILITIES: Capability[] = [
     slug: "lead-generation",
     image: "/solutions/lead-generation.jpg",
     title: "Lead Generation",
-    body: "Outbound engines and inbound capture that put more qualified fitness buyers in front of your offer, then follow up until they book.",
+    body: "Outbound engines and inbound capture that put more qualified buyers in front of your offer, then follow up until they book.",
   },
   {
     slug: "ecommerce",
     image: "/solutions/ecommerce.jpg",
     title: "Ecommerce",
-    body: "Shopify and headless storefronts for supplement and apparel catalogues, wired to your ad and analytics stack.",
+    body: "Shopify and headless storefronts for product and apparel catalogs, wired to your ad and analytics stack.",
   },
   {
     slug: "email-and-retention",
     image: "/solutions/email-and-retention.jpg",
     title: "Email & Retention",
-    body: "Flows and campaigns that make a second purchase happen — the cheapest revenue a supplement brand has.",
+    body: "Flows and campaigns that make a second purchase happen — the cheapest revenue a brand has.",
   },
   {
     slug: "analytics-and-tracking",
@@ -325,7 +386,7 @@ export const PROCESS = [
   {
     step: "01",
     title: "Discovery call",
-    body: "Thirty minutes. Your category, your catalogue, what you have tried, and what a win would actually look like for you.",
+    body: "Thirty minutes. Your category, your catalog, what you have tried, and what a win would actually look like for you.",
   },
   {
     step: "02",
@@ -351,7 +412,7 @@ export const FAQS = [
   },
   {
     q: "Do you publish your pricing?",
-    a: "No. Scope varies too much between a single-location gym and a supplement brand running a seven-figure ad budget for a rate card to mean anything. Book a call and you get a written scope and price within a few days.",
+    a: "No. Scope varies too much between a single-location business and a brand running a seven-figure ad budget for a rate card to mean anything. Book a call and you get a written scope and price within a few days.",
   },
   {
     q: "Do you work with brands outside India?",
@@ -367,6 +428,6 @@ export const FAQS = [
   },
   {
     q: "Do you disclose when creative is AI-generated?",
-    a: "Yes, wherever a viewer could reasonably be misled — generated presenters and synthetic voice especially. We will not fake a testimonial, an athlete or a result, for you or for us.",
+    a: "Yes, wherever a viewer could reasonably be misled — generated presenters and synthetic voice especially. We will not fake a testimonial, an endorsement or a result, for you or for us.",
   },
 ] as const;
